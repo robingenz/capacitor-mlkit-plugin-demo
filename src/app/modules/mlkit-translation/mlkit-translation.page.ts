@@ -39,19 +39,15 @@ export class MlkitTranslationPage implements OnInit {
     if (!languages) {
       return;
     }
-    const promises = [];
     for (const availableLanguage of Object.values(Language)) {
-      let promise;
       if (languages.includes(availableLanguage)) {
-        promise = Translation.downloadModel({ language: availableLanguage });
+        await Translation.downloadModel({ language: availableLanguage });
       } else {
-        promise = Translation.deleteDownloadedModel({
+        await Translation.deleteDownloadedModel({
           language: availableLanguage,
         });
       }
-      promises.push(promise);
     }
-    await Promise.all(promises);
     this.disableSaveModelsButton = false;
   }
 
