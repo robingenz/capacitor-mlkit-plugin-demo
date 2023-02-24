@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "20043654228",
+    "project_id": "capacitor-firebase-plugin-demo",
+    "storage_bucket": "capacitor-firebase-plugin-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20043654228:android:202e553ca9fef3260939c1",
+        "android_client_info": {
+          "package_name": "dev.robingenz.capacitorjs.demo.firebaseplugins"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20043654228-7dao3djspja0h37l7c01qhoevsc1b4s0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.robingenz.capacitorjs.demo.firebaseplugins",
+            "certificate_hash": "99e0cf42dd4a715410ef903e41cfbbb0e1d7464f"
+          }
+        },
+        {
+          "client_id": "20043654228-3unt9lkt2s2rkbp6u46s4qv05q0jilis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzgnQ9lstbZx6u9AHoDmfCoOUCPU8V9DE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20043654228-3unt9lkt2s2rkbp6u46s4qv05q0jilis.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "20043654228-gi1rlceujodsuk96vnhpv1ll1vmdefvj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.robingenz.capacitorjs.demo.firebaseplugins"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

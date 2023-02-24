@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">capacitor-mlkit-plugin-demo</string>
+    <string name="title_activity_main">capacitor-mlkit-plugin-demo</string>
+    <string name="package_name">dev.robingenz.capacitorjs.demo.mlkitplugins</string>
+    <string name="custom_url_scheme">dev.robingenz.capacitorjs.demo.mlkitplugins</string>
+</resources>

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ML Kit Translation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>About</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ⚡️ Capacitor plugin for ML Kit Translation.
+    </ion-card-content>
+    <ion-row class="ion-no-padding">
+      <ion-col>
+        <ion-button
+          fill="clear"
+          (click)="openOnGithub()"
+          class="ion-float-right"
+          >GitHub</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Translate</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="fixed">Text</ion-label>
+        <ion-input type="text" formControlName="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Source Language</ion-label>
+        <ion-select formControlName="sourceLanguage">
+          <ion-select-option
+            *ngFor="let item of language | keyvalue"
+            [value]="item.value"
+            >{{ item.key }}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Target Language</ion-label>
+        <ion-select formControlName="targetLanguage">
+          <ion-select-option
+            *ngFor="let item of language | keyvalue"
+            [value]="item.value"
+            >{{ item.key }}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Translation</ion-label>
+        <ion-input
+          type="text"
+          readonly
+          formControlName="translatedText"
+        ></ion-input>
+      </ion-item>
+      <ion-button (click)="translate()">Translate</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

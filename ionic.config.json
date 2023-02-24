@@ -1,0 +1,7 @@
+{
+  "name": "capacitor-mlkit-plugin-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
