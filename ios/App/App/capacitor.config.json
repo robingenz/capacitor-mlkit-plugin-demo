@@ -1,9 +1,9 @@
 {
-  "appId": "dev.robingenz.capacitorjs.demo.mlkitplugins",
-  "appName": "capacitor-mlkit-plugin-demo",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "plugins": {},
-  "cordova": {}
+	"appId": "dev.robingenz.capacitorjs.demo.mlkitplugins",
+	"appName": "capacitor-mlkit-plugin-demo",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "www",
+	"plugins": {},
+	"cordova": {}
 }
