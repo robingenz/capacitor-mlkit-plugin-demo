@@ -15,8 +15,8 @@ const routes: Routes = [
   {
     path: 'mlkit-translation',
     loadChildren: () =>
-      import('./modules/mlkit-translation/mlkit-translation.module').then(
-        (m) => m.MlkitTranslationPageModule
+      import('./modules/translation/translation.module').then(
+        (m) => m.TranslationModule
       ),
   },
   {

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SharedTestingModule } from '@tests/modules';
-import { MlkitTranslationPage } from './mlkit-translation.page';
+import { TranslationPage } from './translation.page';
 
-describe('MlkitTranslationPage', () => {
-  let component: MlkitTranslationPage;
-  let fixture: ComponentFixture<MlkitTranslationPage>;
+describe('TranslationPage', () => {
+  let component: TranslationPage;
+  let fixture: ComponentFixture<TranslationPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MlkitTranslationPage],
+      declarations: [TranslationPage],
       imports: [SharedTestingModule],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MlkitTranslationPage);
+    fixture = TestBed.createComponent(TranslationPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

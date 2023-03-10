@@ -3,11 +3,11 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Language, Translation } from '@capacitor-mlkit/translation';
 
 @Component({
-  selector: 'app-mlkit-translation',
-  templateUrl: './mlkit-translation.page.html',
-  styleUrls: ['./mlkit-translation.page.scss'],
+  selector: 'app-translation',
+  templateUrl: './translation.page.html',
+  styleUrls: ['./translation.page.scss'],
 })
-export class MlkitTranslationPage implements OnInit {
+export class TranslationPage implements OnInit {
   public readonly language = Language;
   public translateFormGroup = new UntypedFormGroup({
     text: new UntypedFormControl(''),

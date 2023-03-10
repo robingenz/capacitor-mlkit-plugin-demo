@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class HomePage {
   public plugins = [
     {
-      name: 'ML Kit Translation',
-      url: '/mlkit-translation',
+      name: 'Translation',
+      url: '/translation',
     },
   ];
 
