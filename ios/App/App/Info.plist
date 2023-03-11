@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+  <key>NSCameraUsageDescription</key>
+  <string>The app enables the scanning of various barcodes.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
