@@ -13,7 +13,14 @@ const routes: Routes = [
       import('./modules/home/home.module').then((m) => m.HomePageModule),
   },
   {
-    path: 'mlkit-translation',
+    path: 'barcode-scanning',
+    loadChildren: () =>
+      import('./modules/barcode-scanning/barcode-scanning.module').then(
+        (m) => m.BarcodeScanningModule
+      ),
+  },
+  {
+    path: 'translation',
     loadChildren: () =>
       import('./modules/translation/translation.module').then(
         (m) => m.TranslationModule

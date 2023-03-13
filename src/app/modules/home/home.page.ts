@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 export class HomePage {
   public plugins = [
     {
+      name: 'Barcode Scanning',
+      url: '/barcode-scanning',
+    },
+    {
       name: 'Translation',
       url: '/translation',
     },
