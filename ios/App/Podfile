@@ -11,7 +11,7 @@ install! 'cocoapods', :disable_input_output_paths => true
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
-  pod 'CapacitorMlkitBarcodeScanning', :path => '../../../../capawesome-team/capacitor-mlkit/packages/barcode-scanning'
+  pod 'CapacitorMlkitBarcodeScanning', :path => '../../node_modules/@capacitor-mlkit/barcode-scanning'
   pod 'CapacitorMlkitTranslation', :path => '../../node_modules/@capacitor-mlkit/translation'
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
   pod 'CapacitorHaptics', :path => '../../node_modules/@capacitor/haptics'
