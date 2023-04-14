@@ -115,28 +115,29 @@ export class BarcodeScanningModalComponent
 
     const squareElementBoundingClientRect =
       this.squareElement?.nativeElement.getBoundingClientRect();
-    const detectionCornerPoints = squareElementBoundingClientRect
+    const scaledRect = squareElementBoundingClientRect
+      ? {
+          left: squareElementBoundingClientRect.left * window.devicePixelRatio,
+          right:
+            squareElementBoundingClientRect.right * window.devicePixelRatio,
+          top: squareElementBoundingClientRect.top * window.devicePixelRatio,
+          bottom:
+            squareElementBoundingClientRect.bottom * window.devicePixelRatio,
+          width:
+            squareElementBoundingClientRect.width * window.devicePixelRatio,
+          height:
+            squareElementBoundingClientRect.height * window.devicePixelRatio,
+        }
+      : undefined;
+    const detectionCornerPoints = scaledRect
       ? [
+          [scaledRect.left, scaledRect.top],
+          [scaledRect.left + scaledRect.width, scaledRect.top],
           [
-            squareElementBoundingClientRect.left,
-            squareElementBoundingClientRect.top,
+            scaledRect.left + scaledRect.width,
+            scaledRect.top + scaledRect.height,
           ],
-          [
-            squareElementBoundingClientRect.left +
-              squareElementBoundingClientRect.width,
-            squareElementBoundingClientRect.top,
-          ],
-          [
-            squareElementBoundingClientRect.left +
-              squareElementBoundingClientRect.width,
-            squareElementBoundingClientRect.top +
-              squareElementBoundingClientRect.height,
-          ],
-          [
-            squareElementBoundingClientRect.left,
-            squareElementBoundingClientRect.top +
-              squareElementBoundingClientRect.height,
-          ],
+          [scaledRect.left, scaledRect.top + scaledRect.height],
         ]
       : undefined;
     const listener = await BarcodeScanner.addListener(

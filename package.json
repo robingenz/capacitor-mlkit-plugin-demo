@@ -21,7 +21,7 @@
     "@angular/platform-browser": "14.2.4",
     "@angular/platform-browser-dynamic": "14.2.4",
     "@angular/router": "14.2.4",
-    "@capacitor-mlkit/barcode-scanning": "0.0.2",
+    "@capacitor-mlkit/barcode-scanning": "0.0.3-dev.707dcbf.1681512801",
     "@capacitor-mlkit/translation": "0.0.1",
     "@capacitor/android": "4.3.0",
     "@capacitor/app": "4.0.1",
