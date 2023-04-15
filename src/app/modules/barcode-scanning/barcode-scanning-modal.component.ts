@@ -55,10 +55,11 @@ import {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        border-radius: 12px;
-        width: 250px;
-        height: 250px;
-        border: 12px solid white;
+        border-radius: 16px;
+        width: 200px;
+        height: 200px;
+        border: 6px solid white;
+        box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3);
       }
     `,
   ],
