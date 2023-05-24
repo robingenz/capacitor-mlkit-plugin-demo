@@ -10,7 +10,8 @@
 
 The following plugins are included:
 
-- [capacitor-mlkit/translation](https://github.com/capawesome-team/capacitor-mlkit)
+- [capacitor-mlkit/barcode-scanning](https://capawesome.io/plugins/mlkit/barcode-scanning/)
+- [capacitor-mlkit/translation](https://capawesome.io/plugins/mlkit/translation/)
 
 ## Development Setup 💻
 
