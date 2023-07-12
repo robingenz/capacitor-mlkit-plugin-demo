@@ -5,7 +5,7 @@
   "homepage": "https://github.com/robingenz/capacitor-mlkit-plugin-demo",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host=0.0.0.0",
+    "start": "ng serve",
     "build": "ng build --configuration production",
     "test": "ng test",
     "test:ci": "ng test --watch=false --progress=false --code-coverage --browsers=HeadlessChrome",
