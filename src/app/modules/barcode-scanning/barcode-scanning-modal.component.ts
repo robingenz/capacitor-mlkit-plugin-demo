@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   Input,
+  NgZone,
   OnDestroy,
   OnInit,
   ViewChild,
@@ -77,7 +78,10 @@ export class BarcodeScanningModalComponent
 
   public isTorchAvailable = false;
 
-  constructor(private readonly dialogService: DialogService) {}
+  constructor(
+    private readonly dialogService: DialogService,
+    private readonly ngZone: NgZone
+  ) {}
 
   public ngOnInit(): void {
     BarcodeScanner.isTorchAvailable().then((result) => {
@@ -143,24 +147,26 @@ export class BarcodeScanningModalComponent
       : undefined;
     const listener = await BarcodeScanner.addListener(
       'barcodeScanned',
-      async (result) => {
-        const cornerPoints = result.barcode.cornerPoints;
-        if (detectionCornerPoints && cornerPoints) {
-          if (
-            detectionCornerPoints[0][0] > cornerPoints[0][0] ||
-            detectionCornerPoints[0][1] > cornerPoints[0][1] ||
-            detectionCornerPoints[1][0] < cornerPoints[1][0] ||
-            detectionCornerPoints[1][1] > cornerPoints[1][1] ||
-            detectionCornerPoints[2][0] < cornerPoints[2][0] ||
-            detectionCornerPoints[2][1] < cornerPoints[2][1] ||
-            detectionCornerPoints[3][0] > cornerPoints[3][0] ||
-            detectionCornerPoints[3][1] < cornerPoints[3][1]
-          ) {
-            return;
+      async (event) => {
+        this.ngZone.run(() => {
+          const cornerPoints = event.barcode.cornerPoints;
+          if (detectionCornerPoints && cornerPoints) {
+            if (
+              detectionCornerPoints[0][0] > cornerPoints[0][0] ||
+              detectionCornerPoints[0][1] > cornerPoints[0][1] ||
+              detectionCornerPoints[1][0] < cornerPoints[1][0] ||
+              detectionCornerPoints[1][1] > cornerPoints[1][1] ||
+              detectionCornerPoints[2][0] < cornerPoints[2][0] ||
+              detectionCornerPoints[2][1] < cornerPoints[2][1] ||
+              detectionCornerPoints[3][0] > cornerPoints[3][0] ||
+              detectionCornerPoints[3][1] < cornerPoints[3][1]
+            ) {
+              return;
+            }
           }
-        }
-        await listener.remove();
-        this.closeModal(result.barcode);
+          listener.remove();
+          this.closeModal(event.barcode);
+        });
       }
     );
     await BarcodeScanner.startScan(options);

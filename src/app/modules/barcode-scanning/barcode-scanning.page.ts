@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DialogService } from '@app/core';
 import {
@@ -22,6 +22,8 @@ export class BarcodeScanningPage implements OnInit {
   public formGroup = new UntypedFormGroup({
     formats: new UntypedFormControl([]),
     lensFacing: new UntypedFormControl(LensFacing.Back),
+    googleBarcodeScannerModuleInstallState: new UntypedFormControl(0),
+    googleBarcodeScannerModuleInstallProgress: new UntypedFormControl(0),
   });
   public barcodes: Barcode[] = [];
   public isSupported = false;
@@ -30,7 +32,10 @@ export class BarcodeScanningPage implements OnInit {
   private readonly GH_URL =
     'https://github.com/capawesome-team/capacitor-barcode-scanning';
 
-  constructor(private readonly dialogService: DialogService) {}
+  constructor(
+    private readonly dialogService: DialogService,
+    private readonly ngZone: NgZone
+  ) {}
 
   public ngOnInit(): void {
     BarcodeScanner.isSupported().then((result) => {
@@ -38,6 +43,21 @@ export class BarcodeScanningPage implements OnInit {
     });
     BarcodeScanner.checkPermissions().then((result) => {
       this.isPermissionGranted = result.camera === 'granted';
+    });
+    BarcodeScanner.removeAllListeners().then(() => {
+      BarcodeScanner.addListener(
+        'googleBarcodeScannerModuleInstallProgress',
+        (event) => {
+          this.ngZone.run(() => {
+            console.log('googleBarcodeScannerModuleInstallProgress', event);
+            const { state, progress } = event;
+            this.formGroup.patchValue({
+              googleBarcodeScannerModuleInstallState: state,
+              googleBarcodeScannerModuleInstallProgress: progress,
+            });
+          });
+        }
+      );
     });
   }
 
@@ -87,6 +107,10 @@ export class BarcodeScanningPage implements OnInit {
 
   public async openSettings(): Promise<void> {
     await BarcodeScanner.openSettings();
+  }
+
+  public async installGoogleBarcodeScannerModule(): Promise<void> {
+    await BarcodeScanner.installGoogleBarcodeScannerModule();
   }
 
   public async requestPermissions(): Promise<void> {

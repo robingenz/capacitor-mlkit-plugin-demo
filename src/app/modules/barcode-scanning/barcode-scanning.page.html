@@ -91,6 +91,26 @@
             >
           </ion-select>
         </ion-item>
+        <ion-item>
+          <ion-label position="fixed"
+            >Google Barcode Scanner Module Install State</ion-label
+          >
+          <ion-input
+            formControlName="googleBarcodeScannerModuleInstallState"
+            type="number"
+            [readonly]="true"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed"
+            >Google Barcode Scanner Module Install Progress</ion-label
+          >
+          <ion-input
+            formControlName="googleBarcodeScannerModuleInstallProgress"
+            type="number"
+            [readonly]="true"
+          ></ion-input>
+        </ion-item>
         <ion-button
           expand="block"
           (click)="startScan()"
@@ -111,6 +131,12 @@
           (click)="openSettings()"
           [disabled]="!isSupported"
           >Open Settings</ion-button
+        >
+        <ion-button
+          expand="block"
+          (click)="installGoogleBarcodeScannerModule()"
+          [disabled]="!isSupported"
+          >Install Google Barcode Scanner Module</ion-button
         >
         <ion-button
           expand="block"
