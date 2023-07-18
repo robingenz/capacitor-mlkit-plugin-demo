@@ -20,6 +20,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'face-detection',
+    loadChildren: () =>
+      import('./modules/face-detection/face-detection.module').then(
+        (m) => m.FaceDetectionModule
+      ),
+  },
+  {
     path: 'translation',
     loadChildren: () =>
       import('./modules/translation/translation.module').then(

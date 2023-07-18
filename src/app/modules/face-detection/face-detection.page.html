@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ML Kit Face Detection</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>About</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ⚡️ Capacitor plugin for ML Kit Face Detection.
+    </ion-card-content>
+    <ion-row class="ion-no-padding">
+      <ion-col>
+        <ion-button fill="clear" (click)="openOnGithub()" class="ion-float-right">GitHub</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Face Detection</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formGroup">
+        <ion-item>
+          <ion-label position="fixed">Performance Mode</ion-label>
+          <ion-select placeholder="PerformanceMode" formControlName="performanceMode">
+            <ion-select-option [value]="performanceMode.Fast">Fast</ion-select-option>
+            <ion-select-option [value]="performanceMode.Accurate">Accurate</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Contour Mode</ion-label>
+          <ion-select placeholder="ContourMode" formControlName="contourMode">
+            <ion-select-option [value]="contourMode.None">None</ion-select-option>
+            <ion-select-option [value]="contourMode.All">All</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Landmark Mode</ion-label>
+          <ion-select placeholder="LandmarkMode" formControlName="landmarkMode">
+            <ion-select-option [value]="landmarkMode.None">None</ion-select-option>
+            <ion-select-option [value]="landmarkMode.All">All</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Classification Mode</ion-label>
+          <ion-select placeholder="ClassificationMode" formControlName="classificationMode">
+            <ion-select-option [value]="classificationMode.None">None</ion-select-option>
+            <ion-select-option [value]="classificationMode.All">All</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button (click)="processImage()">Process Image</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ng-container *ngFor="let face of faces">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Bounds</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="fixed">Top</ion-label>
+          <ion-input type="text" readonly [value]="face.bounds.top"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Left</ion-label>
+          <ion-input type="text" readonly [value]="face.bounds.left"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Bottom</ion-label>
+          <ion-input type="text" readonly [value]="face.bounds.bottom"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Right</ion-label>
+          <ion-input type="text" readonly [value]="face.bounds.right"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Face Orientation</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="fixed">Euler X</ion-label>
+          <ion-input type="text" readonly [value]="face.headEulerAngleX"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Euler Y</ion-label>
+          <ion-input type="text" readonly [value]="face.headEulerAngleY"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Euler Z</ion-label>
+          <ion-input type="text" readonly [value]="face.headEulerAngleZ"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="face.landmarks">
+      <ion-card-header>
+        <ion-card-title>Landmarks</ion-card-title>
+        <ion-card-subtitle>A landmark is a point of interest within a face</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content *ngFor="let landmark of face.landmarks">
+        <ion-item>
+          <ion-label position="fixed">{{ getLandmarkType(landmark.type) }}</ion-label>
+          <ion-input type="text" readonly [value]="getPoint(landmark.position)"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="face.contours">
+      <ion-card-header>
+        <ion-card-title>Contours</ion-card-title>
+        <ion-card-subtitle>A contour is a set of points that represent the shape of a facial feature</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content *ngFor="let contour of face.contours">
+        <ion-item>
+          <ion-label position="fixed">{{ getContourType(contour.type) }}</ion-label>
+          <ion-input type="text" readonly [value]="getPoints(contour.points)"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="face.smilingProbability || face.leftEyeOpenProbability || face.rightEyeOpenProbability">
+      <ion-card-header>
+        <ion-card-title>Classification</ion-card-title>
+        <ion-card-subtitle>Feature probabilities</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="fixed">Smiling</ion-label>
+          <ion-input type="text" readonly [value]="face.smilingProbability"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Left eye open</ion-label>
+          <ion-input type="text" readonly [value]="face.leftEyeOpenProbability"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Right eye open</ion-label>
+          <ion-input type="text" readonly [value]="face.rightEyeOpenProbability"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>
