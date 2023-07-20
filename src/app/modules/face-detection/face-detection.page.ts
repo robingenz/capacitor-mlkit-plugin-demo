@@ -23,37 +23,12 @@ export class FaceDetectionPage implements OnInit {
     landmarkMode: new UntypedFormControl(LandmarkMode.None),
 
     classificationMode: new UntypedFormControl(ClassificationMode.None),
+
+    minFaceSize: new UntypedFormControl(1),
+    enableTracking: new UntypedFormControl(false),
   });
 
-  public faces: Face[] = [{
-    bounds: { left: 0, top: 0, right: 0, bottom: 0 },
-    headEulerAngleX: 0.0,
-    headEulerAngleY: -14.054030418395996,
-    headEulerAngleZ: -55.007488250732422,
-    landmarks: [{
-      type: LandmarkType.LeftEye,
-      position: { x: 945.869323730469, y: 211.867126464844 },
-    }, {
-      type: LandmarkType.RightEye,
-      position: { x: 971.579467773438, y: 247.257247924805 },
-    }, {
-      type: LandmarkType.MouthBottom,
-      position: { x: 907.756591796875, y: 259.714477539062 },
-    }],
-    contours: [{
-      type: ContourType.NoseBridge,
-      points: [{ x: 505.149811, y: 221.201797 }, { x: 506.987122, y: 313.285919 }],
-    }, {
-      type: ContourType.LeftEye,
-      points: [{ x: 505.149811, y: 221.201797 }, { x: 506.987122, y: 313.285919 }],
-    }, {
-      type: ContourType.UpperLipTop,
-      points: [{ x: 505.149811, y: 221.201797 }, { x: 506.987122, y: 313.285919 }],
-    }],
-    smilingProbability: 0.88979166746139526,
-    leftEyeOpenProbability: 0.98635888937860727,
-    rightEyeOpenProbability: 0.99258323386311531,
-  }];
+  public faces: Face[] = [];
 
   private readonly githubUrl = 'https://github.com/robingenz/capacitor-mlkit';
 
@@ -81,8 +56,8 @@ export class FaceDetectionPage implements OnInit {
 
     const classificationMode = this.formGroup.get('classificationMode')?.value;
 
-    const minFaceSize = undefined;
-    const enableTracking = undefined;
+    const minFaceSize = this.formGroup.get('minFaceSize')?.value;
+    const enableTracking = this.formGroup.get('enableTracking')?.value;
 
     const { faces } = await FaceDetection.processImage({
       path,
@@ -94,7 +69,7 @@ export class FaceDetectionPage implements OnInit {
 
       classificationMode: classificationMode,
 
-      minFaceSize: minFaceSize,
+      minFaceSize: (minFaceSize / 10),
       enableTracking: enableTracking,
     });
     this.faces = faces;

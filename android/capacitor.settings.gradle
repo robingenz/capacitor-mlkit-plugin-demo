@@ -6,7 +6,7 @@ include ':capacitor-mlkit-barcode-scanning'
 project(':capacitor-mlkit-barcode-scanning').projectDir = new File('../node_modules/@capacitor-mlkit/barcode-scanning/android')
 
 include ':capacitor-mlkit-face-detection'
-project(':capacitor-mlkit-face-detection').projectDir = new File('../../capacitor-mlkit/packages/face-detection/android')
+project(':capacitor-mlkit-face-detection').projectDir = new File('../node_modules/@capacitor-mlkit/face-detection/android')
 
 include ':capacitor-mlkit-translation'
 project(':capacitor-mlkit-translation').projectDir = new File('../node_modules/@capacitor-mlkit/translation/android')
