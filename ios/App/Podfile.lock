@@ -143,7 +143,7 @@ EXTERNAL SOURCES:
   CapacitorMlkitBarcodeScanning:
     :path: "../../node_modules/@capacitor-mlkit/barcode-scanning"
   CapacitorMlkitFaceDetection:
-    :path: "../../../capacitor-mlkit/packages/face-detection"
+    :path: "../../node_modules/@capacitor-mlkit/face-detection"
   CapacitorMlkitTranslation:
     :path: "../../node_modules/@capacitor-mlkit/translation"
   CapacitorStatusBar:
