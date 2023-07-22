@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { FaceDetection, PerformanceMode, LandmarkMode, LandmarkType, ContourMode, ContourType, ClassificationMode, Face, Point } from '@capacitor-mlkit/face-detection';
+import {
+  FaceDetection,
+  PerformanceMode,
+  LandmarkMode,
+  LandmarkType,
+  ContourMode,
+  ContourType,
+  ClassificationMode,
+  Face,
+  Point,
+} from '@capacitor-mlkit/face-detection';
 import { FilePicker } from '@capawesome/capacitor-file-picker';
 
 @Component({
@@ -32,10 +42,10 @@ export class FaceDetectionPage implements OnInit {
 
   private readonly githubUrl = 'https://github.com/robingenz/capacitor-mlkit';
 
-  constructor() { }
+  constructor() {}
 
   public ngOnInit(): void {
-    // this.getDownloadedModels();
+    return;
   }
 
   public openOnGithub(): void {
@@ -69,7 +79,7 @@ export class FaceDetectionPage implements OnInit {
 
       classificationMode: classificationMode,
 
-      minFaceSize: (minFaceSize / 10),
+      minFaceSize: minFaceSize / 10,
       enableTracking: enableTracking,
     });
     this.faces = faces;
@@ -89,6 +99,6 @@ export class FaceDetectionPage implements OnInit {
     for (const point of points) {
       $.push(this.getPoint(point));
     }
-    return $.join(", ");
+    return $.join(', ');
   }
 }
