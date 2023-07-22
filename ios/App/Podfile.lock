@@ -11,6 +11,9 @@ PODS:
   - CapacitorMlkitBarcodeScanning (5.0.3):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 4.0.0)
+  - CapacitorMlkitFaceDetection (5.0.3-dev.1a9ddd6.1689870691):
+    - Capacitor
+    - GoogleMLKit/FaceDetection (= 4.0.0)
   - CapacitorMlkitTranslation (5.0.3):
     - Capacitor
     - GoogleMLKit/Translate (= 4.0.0)
@@ -25,6 +28,9 @@ PODS:
   - GoogleMLKit/BarcodeScanning (4.0.0):
     - GoogleMLKit/MLKitCore
     - MLKitBarcodeScanning (~> 3.0.0)
+  - GoogleMLKit/FaceDetection (4.0.0):
+    - GoogleMLKit/MLKitCore
+    - MLKitFaceDetection (~> 3.0.0)
   - GoogleMLKit/MLKitCore (4.0.0):
     - MLKitCommon (~> 9.0.0)
   - GoogleMLKit/Translate (4.0.0):
@@ -65,6 +71,9 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 7.0)
     - GoogleUtilitiesComponents (~> 1.0)
     - GTMSessionFetcher/Core (< 3.0, >= 1.1)
+  - MLKitFaceDetection (3.0.0):
+    - MLKitCommon (~> 9.0)
+    - MLKitVision (~> 5.0)
   - MLKitNaturalLanguage (5.0.0):
     - GoogleToolboxForMac/Logger (~> 2.1)
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
@@ -96,6 +105,7 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorMlkitBarcodeScanning (from `../../node_modules/@capacitor-mlkit/barcode-scanning`)"
+  - "CapacitorMlkitFaceDetection (from `../../node_modules/@capacitor-mlkit/face-detection`)"
   - "CapacitorMlkitTranslation (from `../../node_modules/@capacitor-mlkit/translation`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - "CapawesomeCapacitorFilePicker (from `../../node_modules/@capawesome/capacitor-file-picker`)"
@@ -111,6 +121,7 @@ SPEC REPOS:
     - MLImage
     - MLKitBarcodeScanning
     - MLKitCommon
+    - MLKitFaceDetection
     - MLKitNaturalLanguage
     - MLKitTranslate
     - MLKitVision
@@ -131,6 +142,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/keyboard"
   CapacitorMlkitBarcodeScanning:
     :path: "../../node_modules/@capacitor-mlkit/barcode-scanning"
+  CapacitorMlkitFaceDetection:
+    :path: "../../node_modules/@capacitor-mlkit/face-detection"
   CapacitorMlkitTranslation:
     :path: "../../node_modules/@capacitor-mlkit/translation"
   CapacitorStatusBar:
@@ -145,6 +158,7 @@ SPEC CHECKSUMS:
   CapacitorHaptics: a7d1a6be8d84bcb2749bad57230a8b9e8cdcef7c
   CapacitorKeyboard: 8a25a4241b74f69d457a7e81220a54c22214a679
   CapacitorMlkitBarcodeScanning: 1a4f9b4b910f2c23dc274fb621a93a5d4ac0728b
+  CapacitorMlkitFaceDetection: 81020c174b08aa54cd673d48a7741a909294aec8
   CapacitorMlkitTranslation: 05886dc64ddb186b63c49ebcf73176f0d5ebbac7
   CapacitorStatusBar: 7ff77f2b22a52a93a140d1b2dede027bfb7d705f
   CapawesomeCapacitorFilePicker: ec211560d209c2efa0e47dad3308bf497e6ce388
@@ -157,6 +171,7 @@ SPEC CHECKSUMS:
   MLImage: 7bb7c4264164ade9bf64f679b40fb29c8f33ee9b
   MLKitBarcodeScanning: 04e264482c5f3810cb89ebc134ef6b61e67db505
   MLKitCommon: c1b791c3e667091918d91bda4bba69a91011e390
+  MLKitFaceDetection: 4981488f71ea8ed718cda692a29ab562637d9ae5
   MLKitNaturalLanguage: cf9de96911516fc83297429b7d7b6b33bfa56a93
   MLKitTranslate: e805e2873e0fbb211547c714b40c22c08cb8d7cb
   MLKitVision: 8baa5f46ee3352614169b85250574fde38c36f49
@@ -164,6 +179,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
 
-PODFILE CHECKSUM: 737e87b2e4d23d0b51db1b53688411c6b7d04c8e
+PODFILE CHECKSUM: abe167a2ec205e0d4741befc341a98b5999d7af0
 
 COCOAPODS: 1.12.1

@@ -10,6 +10,7 @@ android {
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
     implementation project(':capacitor-mlkit-barcode-scanning')
+    implementation project(':capacitor-mlkit-face-detection')
     implementation project(':capacitor-mlkit-translation')
     implementation project(':capacitor-app')
     implementation project(':capacitor-haptics')
