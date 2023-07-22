@@ -11,7 +11,7 @@ PODS:
   - CapacitorMlkitBarcodeScanning (5.0.3):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 4.0.0)
-  - CapacitorMlkitFaceDetection (5.0.3):
+  - CapacitorMlkitFaceDetection (5.0.3-dev.1a9ddd6.1689870691):
     - Capacitor
     - GoogleMLKit/FaceDetection (= 4.0.0)
   - CapacitorMlkitTranslation (5.0.3):
@@ -105,7 +105,7 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorMlkitBarcodeScanning (from `../../node_modules/@capacitor-mlkit/barcode-scanning`)"
-  - CapacitorMlkitFaceDetection (from `../../node_modules/@capacitor-mlkit/face-detection`)
+  - "CapacitorMlkitFaceDetection (from `../../node_modules/@capacitor-mlkit/face-detection`)"
   - "CapacitorMlkitTranslation (from `../../node_modules/@capacitor-mlkit/translation`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - "CapawesomeCapacitorFilePicker (from `../../node_modules/@capawesome/capacitor-file-picker`)"
@@ -158,7 +158,7 @@ SPEC CHECKSUMS:
   CapacitorHaptics: a7d1a6be8d84bcb2749bad57230a8b9e8cdcef7c
   CapacitorKeyboard: 8a25a4241b74f69d457a7e81220a54c22214a679
   CapacitorMlkitBarcodeScanning: 1a4f9b4b910f2c23dc274fb621a93a5d4ac0728b
-  CapacitorMlkitFaceDetection: c8b43dd60594f18f748a06782ec513d1a8e51ee9
+  CapacitorMlkitFaceDetection: 81020c174b08aa54cd673d48a7741a909294aec8
   CapacitorMlkitTranslation: 05886dc64ddb186b63c49ebcf73176f0d5ebbac7
   CapacitorStatusBar: 7ff77f2b22a52a93a140d1b2dede027bfb7d705f
   CapawesomeCapacitorFilePicker: ec211560d209c2efa0e47dad3308bf497e6ce388
@@ -179,6 +179,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
 
-PODFILE CHECKSUM: 6498051e46fb91df48f349f037c64f03588be5e2
+PODFILE CHECKSUM: abe167a2ec205e0d4741befc341a98b5999d7af0
 
 COCOAPODS: 1.12.1
