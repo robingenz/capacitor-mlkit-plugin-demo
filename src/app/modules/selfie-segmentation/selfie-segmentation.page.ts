@@ -19,7 +19,7 @@ export class SelfieSegmentationPage implements OnInit {
     height: new UntypedFormControl(),
   });
 
-  public result: ProcessImageResult = { path: "", width: 0, height: 0 };
+  public result: ProcessImageResult = { path: '', width: 0, height: 0 };
 
   private readonly githubUrl = 'https://github.com/robingenz/capacitor-mlkit';
 
@@ -49,10 +49,10 @@ export class SelfieSegmentationPage implements OnInit {
       width: width,
       height: height,
     });
-    console.log(result)
+    console.log(result);
 
     result.path = Capacitor.convertFileSrc(result.path);
-    console.log(result)
+    console.log(result);
 
     this.result = result;
   }
