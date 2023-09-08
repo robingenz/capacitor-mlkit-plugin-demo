@@ -1,0 +1,14 @@
+ion-list ion-list-header {
+  height: 0;
+}
+
+ion-list ion-card {
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 6px;
+}
+
+ion-card img[src=""],
+ion-card img:not([src]) {
+  display: none;
+}

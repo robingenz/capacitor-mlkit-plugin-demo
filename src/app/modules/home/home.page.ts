@@ -16,6 +16,10 @@ export class HomePage {
       url: '/face-detection',
     },
     {
+      name: 'Selfie Segmentation',
+      url: '/selfie-segmentation',
+    },
+    {
       name: 'Translation',
       url: '/translation',
     },

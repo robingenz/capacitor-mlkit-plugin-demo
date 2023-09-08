@@ -23,6 +23,7 @@
     "@angular/router": "14.2.4",
     "@capacitor-mlkit/barcode-scanning": "5.0.3",
     "@capacitor-mlkit/face-detection": "5.0.3-dev.1a9ddd6.1689870691",
+    "@capacitor-mlkit/selfie-segmentation": "file:../capacitor-mlkit/packages/selfie-segmentation",
     "@capacitor-mlkit/translation": "5.0.3",
     "@capacitor/android": "5.0.0",
     "@capacitor/app": "5.0.0",
