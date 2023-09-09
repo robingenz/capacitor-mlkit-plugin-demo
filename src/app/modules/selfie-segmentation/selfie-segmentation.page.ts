@@ -17,7 +17,13 @@ export class SelfieSegmentationPage implements OnInit {
   public formGroup = new UntypedFormGroup({
     width: new UntypedFormControl(512),
     height: new UntypedFormControl(),
+
+    confidence: new UntypedFormControl(9),
   });
+
+  pinFormatter(value: number) {
+    return `${value / 10.0}`;
+  }
 
   public result: ProcessImageResult = { path: '', width: 0, height: 0 };
 
@@ -43,11 +49,15 @@ export class SelfieSegmentationPage implements OnInit {
     const width = this.formGroup.get('width')?.value;
     const height = this.formGroup.get('height')?.value;
 
+    const confidence = this.formGroup.get('confidence')?.value;
+
     const result = await SelfieSegmentation.processImage({
       path,
 
       width: width,
       height: height,
+
+      confidence: confidence / 10.0,
     });
     console.log(result);
 

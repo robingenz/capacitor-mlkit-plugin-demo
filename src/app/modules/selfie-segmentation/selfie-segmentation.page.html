@@ -40,6 +40,19 @@
           <ion-label position="fixed">Height</ion-label>
           <ion-input formControlName="height" type="number"></ion-input>
         </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Confidence</ion-label>
+          <ion-range
+            aria-label="Confidence"
+            [ticks]="true"
+            [snaps]="true"
+            [min]="0"
+            [max]="10"
+            [pin]="true"
+            [pinFormatter]="pinFormatter"
+            formControlName="confidence"
+          ></ion-range>
+        </ion-item>
         <ion-button (click)="processImage()">Process Image</ion-button>
       </form>
     </ion-card-content>
