@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import {
-  SelfieSegmentation,
-  ProcessImageOptions,
-  ProcessImageResult,
-} from '@capacitor-mlkit/selfie-segmentation';
+import { SelfieSegmentation } from '@capacitor-mlkit/selfie-segmentation';
 import { FilePicker } from '@capawesome/capacitor-file-picker';
 import { Capacitor } from '@capacitor/core';
 
@@ -25,7 +21,7 @@ export class SelfieSegmentationPage implements OnInit {
     return `${value / 10.0}`;
   }
 
-  public result: ProcessImageResult = { path: '', width: 0, height: 0 };
+  public result: any;
 
   private readonly githubUrl = 'https://github.com/robingenz/capacitor-mlkit';
 
@@ -59,10 +55,8 @@ export class SelfieSegmentationPage implements OnInit {
 
       confidence: confidence / 10.0,
     });
-    console.log(result);
 
     result.path = Capacitor.convertFileSrc(result.path);
-    console.log(result);
 
     this.result = result;
   }
