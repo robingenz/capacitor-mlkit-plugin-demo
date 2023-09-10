@@ -28,7 +28,7 @@
   </ion-card>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Selfie Segmentation</ion-card-title>
+      <ion-card-title>Demo</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <form [formGroup]="formGroup">
@@ -57,22 +57,17 @@
       </form>
     </ion-card-content>
   </ion-card>
-  <ion-item *ngIf="result !== undefined">
-    <ion-card>
-      <img [src]="result.path" class="checkered" />
-      <ion-card-header>
-        <ion-card-title>Bounds</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="fixed">Width</ion-label>
-          <ion-input type="text" readonly [value]="result.width"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="fixed">Height</ion-label>
-          <ion-input type="text" readonly [value]="result.height"></ion-input>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-  </ion-item>
+  <ion-card *ngIf="result">
+    <ion-card-content>
+      <img [src]="convertPathToWebPath(result.path)" />
+      <ion-item>
+        <ion-label position="fixed">Width</ion-label>
+        <ion-input type="text" readonly [value]="result.width"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Height</ion-label>
+        <ion-input type="text" readonly [value]="result.height"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
