@@ -57,7 +57,7 @@
       </form>
     </ion-card-content>
   </ion-card>
-  <ion-item *ngIf="result.path !== ''">
+  <ion-item *ngIf="result !== undefined">
     <ion-card>
       <img [src]="result.path" class="checkered" />
       <ion-card-header>

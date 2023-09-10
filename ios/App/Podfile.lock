@@ -14,6 +14,9 @@ PODS:
   - CapacitorMlkitFaceDetection (5.0.3-dev.1a9ddd6.1689870691):
     - Capacitor
     - GoogleMLKit/FaceDetection (= 4.0.0)
+  - CapacitorMlkitSelfieSegmentation (5.1.0):
+    - Capacitor
+    - GoogleMLKit/SegmentationSelfie (= 4.0.0)
   - CapacitorMlkitTranslation (5.0.3):
     - Capacitor
     - GoogleMLKit/Translate (= 4.0.0)
@@ -33,6 +36,9 @@ PODS:
     - MLKitFaceDetection (~> 3.0.0)
   - GoogleMLKit/MLKitCore (4.0.0):
     - MLKitCommon (~> 9.0.0)
+  - GoogleMLKit/SegmentationSelfie (4.0.0):
+    - GoogleMLKit/MLKitCore
+    - MLKitSegmentationSelfie (~> 1.0.0-beta9)
   - GoogleMLKit/Translate (4.0.0):
     - GoogleMLKit/MLKitCore
     - MLKitTranslate (~> 3.0.0)
@@ -81,6 +87,11 @@ PODS:
     - GoogleToolboxForMac/StringEncoding (~> 2.1)
     - GTMSessionFetcher/Core (< 3.0, >= 1.1)
     - MLKitCommon (~> 9.0)
+  - MLKitSegmentationCommon (1.0.0-beta9):
+    - MLKitCommon (~> 9.0)
+    - MLKitXenoCommon (= 1.0.0-beta11)
+  - MLKitSegmentationSelfie (1.0.0-beta9):
+    - MLKitSegmentationCommon (= 1.0.0-beta9)
   - MLKitTranslate (3.0.0):
     - MLKitNaturalLanguage (~> 5.0)
     - SSZipArchive (< 2.2, >= 2.1)
@@ -90,6 +101,9 @@ PODS:
     - GTMSessionFetcher/Core (< 3.0, >= 1.1)
     - MLImage (= 1.0.0-beta4)
     - MLKitCommon (~> 9.0)
+  - MLKitXenoCommon (1.0.0-beta11):
+    - MLKitCommon (~> 9.0)
+    - MLKitVision (~> 5.0)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -106,6 +120,7 @@ DEPENDENCIES:
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorMlkitBarcodeScanning (from `../../node_modules/@capacitor-mlkit/barcode-scanning`)"
   - "CapacitorMlkitFaceDetection (from `../../node_modules/@capacitor-mlkit/face-detection`)"
+  - CapacitorMlkitSelfieSegmentation (from `../../../capacitor-mlkit/packages/selfie-segmentation`)
   - "CapacitorMlkitTranslation (from `../../node_modules/@capacitor-mlkit/translation`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - "CapawesomeCapacitorFilePicker (from `../../node_modules/@capawesome/capacitor-file-picker`)"
@@ -123,8 +138,11 @@ SPEC REPOS:
     - MLKitCommon
     - MLKitFaceDetection
     - MLKitNaturalLanguage
+    - MLKitSegmentationCommon
+    - MLKitSegmentationSelfie
     - MLKitTranslate
     - MLKitVision
+    - MLKitXenoCommon
     - nanopb
     - PromisesObjC
     - SSZipArchive
@@ -144,6 +162,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor-mlkit/barcode-scanning"
   CapacitorMlkitFaceDetection:
     :path: "../../node_modules/@capacitor-mlkit/face-detection"
+  CapacitorMlkitSelfieSegmentation:
+    :path: "../../../capacitor-mlkit/packages/selfie-segmentation"
   CapacitorMlkitTranslation:
     :path: "../../node_modules/@capacitor-mlkit/translation"
   CapacitorStatusBar:
@@ -159,6 +179,7 @@ SPEC CHECKSUMS:
   CapacitorKeyboard: 8a25a4241b74f69d457a7e81220a54c22214a679
   CapacitorMlkitBarcodeScanning: 1a4f9b4b910f2c23dc274fb621a93a5d4ac0728b
   CapacitorMlkitFaceDetection: 81020c174b08aa54cd673d48a7741a909294aec8
+  CapacitorMlkitSelfieSegmentation: 4fda3253477bbccdba0ec22295102533663f1573
   CapacitorMlkitTranslation: 05886dc64ddb186b63c49ebcf73176f0d5ebbac7
   CapacitorStatusBar: 7ff77f2b22a52a93a140d1b2dede027bfb7d705f
   CapawesomeCapacitorFilePicker: ec211560d209c2efa0e47dad3308bf497e6ce388
@@ -173,12 +194,15 @@ SPEC CHECKSUMS:
   MLKitCommon: c1b791c3e667091918d91bda4bba69a91011e390
   MLKitFaceDetection: 4981488f71ea8ed718cda692a29ab562637d9ae5
   MLKitNaturalLanguage: cf9de96911516fc83297429b7d7b6b33bfa56a93
+  MLKitSegmentationCommon: 15dcd331c631b2dd615bc2ce829e4fbec9b101d1
+  MLKitSegmentationSelfie: 94c51690e93068160c6585525357ee722a9cda0a
   MLKitTranslate: e805e2873e0fbb211547c714b40c22c08cb8d7cb
   MLKitVision: 8baa5f46ee3352614169b85250574fde38c36f49
+  MLKitXenoCommon: 9fbc49cbaf44767693aac1bce4d866020e089d55
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
 
-PODFILE CHECKSUM: abe167a2ec205e0d4741befc341a98b5999d7af0
+PODFILE CHECKSUM: b1c8845c812f3a665d6d339d97e404aca9e0620c
 
 COCOAPODS: 1.12.1
