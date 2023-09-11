@@ -38,6 +38,10 @@ export class FaceDetectionPage implements OnInit {
     enableTracking: new UntypedFormControl(false),
   });
 
+  pinFormatter(value: number) {
+    return `${value / 10.0}`;
+  }
+
   public faces: Face[] = [];
 
   private readonly githubUrl = 'https://github.com/robingenz/capacitor-mlkit';
@@ -79,7 +83,7 @@ export class FaceDetectionPage implements OnInit {
 
       classificationMode: classificationMode,
 
-      minFaceSize: minFaceSize / 10,
+      minFaceSize: minFaceSize / 10.0,
       enableTracking: enableTracking,
     });
     this.faces = faces;

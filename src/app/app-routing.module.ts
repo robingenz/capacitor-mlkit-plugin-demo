@@ -27,6 +27,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'selfie-segmentation',
+    loadChildren: () =>
+      import('./modules/selfie-segmentation/selfie-segmentation.module').then(
+        (m) => m.SelfieSegmentationModule
+      ),
+  },
+  {
     path: 'translation',
     loadChildren: () =>
       import('./modules/translation/translation.module').then(
