@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { ProcessImageResult, SelfieSegmentation } from '@capacitor-mlkit/selfie-segmentation';
+import {
+  ProcessImageResult,
+  SelfieSegmentation,
+} from '@capacitor-mlkit/selfie-segmentation';
 import { FilePicker } from '@capawesome/capacitor-file-picker';
 import { Capacitor } from '@capacitor/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
