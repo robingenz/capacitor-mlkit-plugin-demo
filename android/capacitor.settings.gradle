@@ -9,7 +9,7 @@ include ':capacitor-mlkit-face-detection'
 project(':capacitor-mlkit-face-detection').projectDir = new File('../node_modules/@capacitor-mlkit/face-detection/android')
 
 include ':capacitor-mlkit-selfie-segmentation'
-project(':capacitor-mlkit-selfie-segmentation').projectDir = new File('../../capacitor-mlkit/packages/selfie-segmentation/android')
+project(':capacitor-mlkit-selfie-segmentation').projectDir = new File('../node_modules/@capacitor-mlkit/selfie-segmentation/android')
 
 include ':capacitor-mlkit-translation'
 project(':capacitor-mlkit-translation').projectDir = new File('../node_modules/@capacitor-mlkit/translation/android')
