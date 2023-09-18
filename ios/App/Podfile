@@ -13,6 +13,7 @@ def capacitor_pods
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorMlkitBarcodeScanning', :path => '../../node_modules/@capacitor-mlkit/barcode-scanning'
   pod 'CapacitorMlkitFaceDetection', :path => '../../node_modules/@capacitor-mlkit/face-detection'
+  pod 'CapacitorMlkitFaceMeshDetection', :path => '../../node_modules/@capacitor-mlkit/face-mesh-detection'
   pod 'CapacitorMlkitSelfieSegmentation', :path => '../../node_modules/@capacitor-mlkit/selfie-segmentation'
   pod 'CapacitorMlkitTranslation', :path => '../../node_modules/@capacitor-mlkit/translation'
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'

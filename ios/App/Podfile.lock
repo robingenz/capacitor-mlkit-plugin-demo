@@ -8,16 +8,18 @@ PODS:
     - Capacitor
   - CapacitorKeyboard (5.0.0):
     - Capacitor
-  - CapacitorMlkitBarcodeScanning (5.2.0):
+  - CapacitorMlkitBarcodeScanning (5.3.0):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 4.0.0)
-  - CapacitorMlkitFaceDetection (5.2.0):
+  - CapacitorMlkitFaceDetection (5.3.0):
     - Capacitor
     - GoogleMLKit/FaceDetection (= 4.0.0)
-  - CapacitorMlkitSelfieSegmentation (5.2.0):
+  - CapacitorMlkitFaceMeshDetection (5.3.0):
+    - Capacitor
+  - CapacitorMlkitSelfieSegmentation (5.3.0):
     - Capacitor
     - GoogleMLKit/SegmentationSelfie (= 4.0.0)
-  - CapacitorMlkitTranslation (5.2.0):
+  - CapacitorMlkitTranslation (5.3.0):
     - Capacitor
     - GoogleMLKit/Translate (= 4.0.0)
   - CapacitorStatusBar (5.0.0):
@@ -120,6 +122,7 @@ DEPENDENCIES:
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorMlkitBarcodeScanning (from `../../node_modules/@capacitor-mlkit/barcode-scanning`)"
   - "CapacitorMlkitFaceDetection (from `../../node_modules/@capacitor-mlkit/face-detection`)"
+  - "CapacitorMlkitFaceMeshDetection (from `../../node_modules/@capacitor-mlkit/face-mesh-detection`)"
   - "CapacitorMlkitSelfieSegmentation (from `../../node_modules/@capacitor-mlkit/selfie-segmentation`)"
   - "CapacitorMlkitTranslation (from `../../node_modules/@capacitor-mlkit/translation`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
@@ -162,6 +165,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor-mlkit/barcode-scanning"
   CapacitorMlkitFaceDetection:
     :path: "../../node_modules/@capacitor-mlkit/face-detection"
+  CapacitorMlkitFaceMeshDetection:
+    :path: "../../node_modules/@capacitor-mlkit/face-mesh-detection"
   CapacitorMlkitSelfieSegmentation:
     :path: "../../node_modules/@capacitor-mlkit/selfie-segmentation"
   CapacitorMlkitTranslation:
@@ -177,10 +182,11 @@ SPEC CHECKSUMS:
   CapacitorCordova: 4ea17670ee562680988a7ce9db68dee5160fe564
   CapacitorHaptics: a7d1a6be8d84bcb2749bad57230a8b9e8cdcef7c
   CapacitorKeyboard: 8a25a4241b74f69d457a7e81220a54c22214a679
-  CapacitorMlkitBarcodeScanning: 8d13ceb0f66b23722aa9427a3ee6f7e3ef405e7e
-  CapacitorMlkitFaceDetection: 602cc98af414efad2bf43bd927c1a13a5b432d73
-  CapacitorMlkitSelfieSegmentation: f4face6e4cf65a7b1c0065ffbea1f3c4e21dd706
-  CapacitorMlkitTranslation: 28fa9be9a4a97a1335236429272fe06dab3757cb
+  CapacitorMlkitBarcodeScanning: ea08ef246e5d3511d5a231a59fae36b16ad9acb3
+  CapacitorMlkitFaceDetection: 46c58a49cb0068a93d6973e2a92b4a0392b02f5d
+  CapacitorMlkitFaceMeshDetection: 326e2a394e0364724e4a46e03eb047c013db01e1
+  CapacitorMlkitSelfieSegmentation: 4cfbea5634d80d5ed044cc76037bb822977e1ecd
+  CapacitorMlkitTranslation: bdaa7f3b842bbd78d939e5f62038b7418c60a2af
   CapacitorStatusBar: 7ff77f2b22a52a93a140d1b2dede027bfb7d705f
   CapawesomeCapacitorFilePicker: ec211560d209c2efa0e47dad3308bf497e6ce388
   GoogleDataTransport: f0308f5905a745f94fb91fea9c6cbaf3831cb1bd
@@ -203,6 +209,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
 
-PODFILE CHECKSUM: f58e077b2c3a0c3f468ff5d4997103f0d73e983a
+PODFILE CHECKSUM: f0d1c41a76b7a458f354c3fac358b2d59b6f6855
 
 COCOAPODS: 1.12.1

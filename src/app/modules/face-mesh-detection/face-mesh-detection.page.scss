@@ -1,0 +1,38 @@
+ion-list ion-list-header {
+  height: 0;
+}
+ion-list ion-card#face-mesh-points {
+  width: 100%;
+}
+ion-list ion-card#face-mesh-points ion-item {
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+  --min-height: auto;
+}
+ion-list ion-card#face-mesh-points ion-item ion-label {
+  width: 40px;
+  min-width: auto;
+  flex: revert;
+  margin: 0;
+  margin-right: 10px;
+  text-align: right;
+}
+ion-list ion-card#face-mesh-points ion-card-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+ion-list ion-card#face-mesh-points ion-item ion-input {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  text-overflow: ellipsis;
+}
+ion-list ion-card#contours {
+  width: 100%;
+}
+ion-list ion-card#contours ion-card-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+ion-list ion-card#contours ion-card-content ion-card {
+  margin: 0;
+}

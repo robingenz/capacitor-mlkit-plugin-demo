@@ -8,6 +8,10 @@
 		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.facedetection.FaceDetectionPlugin"
 	},
 	{
+		"pkg": "@capacitor-mlkit/face-mesh-detection",
+		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.facemeshdetection.FaceMeshDetectionPlugin"
+	},
+	{
 		"pkg": "@capacitor-mlkit/selfie-segmentation",
 		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.selfiesegmentation.SelfieSegmentationPlugin"
 	},

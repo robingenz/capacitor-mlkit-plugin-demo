@@ -27,6 +27,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'face-mesh-detection',
+    loadChildren: () =>
+      import('./modules/face-mesh-detection/face-mesh-detection.module').then(
+        (m) => m.FaceMeshDetectionModule
+      ),
+  },
+  {
     path: 'selfie-segmentation',
     loadChildren: () =>
       import('./modules/selfie-segmentation/selfie-segmentation.module').then(

@@ -20,7 +20,7 @@ export class TranslationPage implements OnInit {
   });
   public disableSaveModelsButton = false;
 
-  private readonly githubUrl = 'https://github.com/robingenz/capacitor-mlkit';
+  private readonly githubUrl = 'https://github.com/capawesome-team/capacitor-mlkit';
 
   constructor() {}
 
