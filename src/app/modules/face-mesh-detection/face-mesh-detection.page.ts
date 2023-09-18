@@ -13,26 +13,18 @@ import { FilePicker } from '@capawesome/capacitor-file-picker';
   templateUrl: './face-mesh-detection.page.html',
   styleUrls: ['./face-mesh-detection.page.scss'],
 })
-export class FaceMeshDetectionPage implements OnInit {
+export class FaceMeshDetectionPage {
   public readonly useCase = UseCase;
 
   public formGroup = new UntypedFormGroup({
     useCase: new UntypedFormControl(UseCase.FaceMesh),
   });
 
-  pinFormatter(value: number) {
-    return `${value / 10.0}`;
-  }
-
   public faceMeshs: FaceMesh[] = [];
 
-  private readonly githubUrl = 'https://github.com/robingenz/capacitor-mlkit';
+  private readonly githubUrl = 'https://github.com/capawesome-team/capacitor-mlkit';
 
   constructor() {}
-
-  public ngOnInit(): void {
-    return;
-  }
 
   public openOnGithub(): void {
     window.open(this.githubUrl, '_blank');
@@ -58,11 +50,12 @@ export class FaceMeshDetectionPage implements OnInit {
   public getPoint(point: Point3D) {
     return `(${point.x}, ${point.y}, ${point.z})`;
   }
+
   public getPoints(points: Point3D[]) {
-    const $ = [];
+    const results = [];
     for (const point of points) {
-      $.push(this.getPoint(point));
+      results.push(this.getPoint(point));
     }
-    return $.join(', ');
+    return results.join(', ');
   }
 }
