@@ -44,7 +44,8 @@ export class FaceDetectionPage implements OnInit {
 
   public faces: Face[] = [];
 
-  private readonly githubUrl = 'https://github.com/capawesome-team/capacitor-mlkit';
+  private readonly githubUrl =
+    'https://github.com/capawesome-team/capacitor-mlkit';
 
   constructor() {}
 

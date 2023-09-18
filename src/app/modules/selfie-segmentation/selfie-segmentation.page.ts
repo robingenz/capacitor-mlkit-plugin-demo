@@ -21,7 +21,8 @@ export class SelfieSegmentationPage {
   });
   public result: ProcessImageResult | undefined;
 
-  private readonly githubUrl = 'https://github.com/capawesome-team/capacitor-mlkit';
+  private readonly githubUrl =
+    'https://github.com/capawesome-team/capacitor-mlkit';
 
   constructor(private readonly domSanitizer: DomSanitizer) {}
 

@@ -22,7 +22,8 @@ export class FaceMeshDetectionPage {
 
   public faceMeshs: FaceMesh[] = [];
 
-  private readonly githubUrl = 'https://github.com/capawesome-team/capacitor-mlkit';
+  private readonly githubUrl =
+    'https://github.com/capawesome-team/capacitor-mlkit';
 
   constructor() {}
 
