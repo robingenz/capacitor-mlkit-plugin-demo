@@ -9,7 +9,7 @@ include ':capacitor-mlkit-face-detection'
 project(':capacitor-mlkit-face-detection').projectDir = new File('../node_modules/@capacitor-mlkit/face-detection/android')
 
 include ':capacitor-mlkit-face-mesh-detection'
-project(':capacitor-mlkit-face-mesh-detection').projectDir = new File('../../capacitor-mlkit/packages/face-mesh-detection/android')
+project(':capacitor-mlkit-face-mesh-detection').projectDir = new File('../node_modules/@capacitor-mlkit/face-mesh-detection/android')
 
 include ':capacitor-mlkit-selfie-segmentation'
 project(':capacitor-mlkit-selfie-segmentation').projectDir = new File('../node_modules/@capacitor-mlkit/selfie-segmentation/android')
