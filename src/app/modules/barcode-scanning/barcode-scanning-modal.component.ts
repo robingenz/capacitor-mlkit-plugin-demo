@@ -16,6 +16,7 @@ import {
   LensFacing,
   StartScanOptions,
 } from '@capacitor-mlkit/barcode-scanning';
+import { InputCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-barcode-scanning',
@@ -33,6 +34,14 @@ import {
 
     <ion-content>
       <div #square class="square"></div>
+      <div class="zoom-ratio-wrapper">
+        <ion-range
+          [min]="minZoomRatio"
+          [max]="maxZoomRatio"
+          [disabled]="minZoomRatio === undefined || maxZoomRatio === undefined"
+          (ionChange)="setZoomRatio($any($event))"
+        ></ion-range>
+      </div>
       <ion-fab
         *ngIf="isTorchAvailable"
         slot="fixed"
@@ -62,6 +71,14 @@ import {
         border: 6px solid white;
         box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3);
       }
+
+      .zoom-ratio-wrapper {
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        transform: translateX(-50%);
+        width: 50%;
+      }
     `,
   ],
 })
@@ -77,6 +94,8 @@ export class BarcodeScanningModalComponent
   public squareElement: ElementRef<HTMLDivElement> | undefined;
 
   public isTorchAvailable = false;
+  public minZoomRatio: number | undefined;
+  public maxZoomRatio: number | undefined;
 
   constructor(
     private readonly dialogService: DialogService,
@@ -97,6 +116,15 @@ export class BarcodeScanningModalComponent
 
   public ngOnDestroy(): void {
     this.stopScan();
+  }
+
+  public setZoomRatio(event: InputCustomEvent): void {
+    if (!event.detail.value) {
+      return;
+    }
+    BarcodeScanner.setZoomRatio({
+      zoomRatio: parseInt(event.detail.value as any, 10),
+    });
   }
 
   public async closeModal(barcode?: Barcode): Promise<void> {
@@ -170,6 +198,12 @@ export class BarcodeScanningModalComponent
       }
     );
     await BarcodeScanner.startScan(options);
+    void BarcodeScanner.getMinZoomRatio().then((result) => {
+      this.minZoomRatio = result.zoomRatio;
+    });
+    void BarcodeScanner.getMaxZoomRatio().then((result) => {
+      this.maxZoomRatio = result.zoomRatio;
+    });
   }
 
   private async stopScan(): Promise<void> {

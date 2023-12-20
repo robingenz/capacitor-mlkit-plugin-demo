@@ -21,7 +21,7 @@
     "@angular/platform-browser": "14.2.4",
     "@angular/platform-browser-dynamic": "14.2.4",
     "@angular/router": "14.2.4",
-    "@capacitor-mlkit/barcode-scanning": "5.3.0",
+    "@capacitor-mlkit/barcode-scanning": "5.3.0-dev.966ebeb.1703101506",
     "@capacitor-mlkit/face-detection": "5.3.0",
     "@capacitor-mlkit/face-mesh-detection": "5.3.0",
     "@capacitor-mlkit/selfie-segmentation": "5.3.0",
