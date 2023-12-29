@@ -22,145 +22,143 @@
           (click)="openOnGithub()"
           class="ion-float-right"
           >GitHub</ion-button
-          >
-        </ion-col>
-      </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Face Mesh Detection</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <form [formGroup]="formGroup">
+        >
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Face Mesh Detection</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formGroup">
+        <ion-item>
+          <ion-label position="fixed">Use Case</ion-label>
+          <ion-select placeholder="UseCase" formControlName="useCase">
+            <ion-select-option [value]="useCase.BoundingBoxOnly"
+              >Bounding Box Only</ion-select-option
+            >
+            <ion-select-option [value]="useCase.FaceMesh"
+              >Face Mesh</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-button (click)="processImage()">Process Image</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  @for (faceMesh of faceMeshs; track faceMesh; let i = $index) {
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Face Mesh #{{ i+1 }}</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Bounds</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
           <ion-item>
-            <ion-label position="fixed">Use Case</ion-label>
-            <ion-select placeholder="UseCase" formControlName="useCase">
-              <ion-select-option [value]="useCase.BoundingBoxOnly"
-                >Bounding Box Only</ion-select-option
+            <ion-label position="fixed">Top</ion-label>
+            <ion-input
+              type="text"
+              readonly
+              [value]="faceMesh.bounds.top"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="fixed">Left</ion-label>
+            <ion-input
+              type="text"
+              readonly
+              [value]="faceMesh.bounds.left"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="fixed">Bottom</ion-label>
+            <ion-input
+              type="text"
+              readonly
+              [value]="faceMesh.bounds.bottom"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="fixed">Right</ion-label>
+            <ion-input
+              type="text"
+              readonly
+              [value]="faceMesh.bounds.right"
+            ></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    @if (faceMesh.contours) {
+    <ion-item>
+      <ion-card id="contours">
+        <ion-card-header>
+          <ion-card-title>Contours</ion-card-title>
+          <ion-card-subtitle>
+            Represents a list of face mesh points for each specific contour
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          @for (contourType of faceMesh.contours | keys; track contourType) {
+          <ion-item>
+            <ion-card id="face-mesh-points">
+              <ion-card-header>
+                <ion-card-title
+                  >{{ contourType | contourTitle }}</ion-card-title
                 >
-                <ion-select-option [value]="useCase.FaceMesh"
-                  >Face Mesh</ion-select-option
+                <ion-card-subtitle>
+                  {{ contourType | contourDescription }}
+                </ion-card-subtitle>
+              </ion-card-header>
+              @for (faceMeshPoint of faceMesh.contours | contour:contourType;
+              track faceMeshPoint) {
+              <ion-card-content>
+                <ion-item>
+                  <ion-label position="fixed"
+                    >#{{ faceMeshPoint.index }}</ion-label
                   >
-                </ion-select>
-              </ion-item>
-              <ion-button (click)="processImage()">Process Image</ion-button>
-            </form>
-          </ion-card-content>
-        </ion-card>
-        @for (faceMesh of faceMeshs; track faceMesh; let i = $index) {
-          <ion-list lines="none">
-            <ion-list-header>
-              <ion-label>Face Mesh #{{ i+1 }}</ion-label>
-            </ion-list-header>
-            <ion-item>
-              <ion-card>
-                <ion-card-header>
-                  <ion-card-title>Bounds</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                  <ion-item>
-                    <ion-label position="fixed">Top</ion-label>
-                    <ion-input
-                      type="text"
-                      readonly
-                      [value]="faceMesh.bounds.top"
-                    ></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label position="fixed">Left</ion-label>
-                    <ion-input
-                      type="text"
-                      readonly
-                      [value]="faceMesh.bounds.left"
-                    ></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label position="fixed">Bottom</ion-label>
-                    <ion-input
-                      type="text"
-                      readonly
-                      [value]="faceMesh.bounds.bottom"
-                    ></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label position="fixed">Right</ion-label>
-                    <ion-input
-                      type="text"
-                      readonly
-                      [value]="faceMesh.bounds.right"
-                    ></ion-input>
-                  </ion-item>
-                </ion-card-content>
-              </ion-card>
-            </ion-item>
-            @if (faceMesh.contours) {
-              <ion-item>
-                <ion-card id="contours">
-                  <ion-card-header>
-                    <ion-card-title>Contours</ion-card-title>
-                    <ion-card-subtitle>
-                      Represents a list of face mesh points for each specific contour
-                    </ion-card-subtitle>
-                  </ion-card-header>
-                  <ion-card-content>
-                    @for (contourType of faceMesh.contours | keys; track contourType) {
-                      <ion-item>
-                        <ion-card id="face-mesh-points">
-                          <ion-card-header>
-                            <ion-card-title
-                              >{{ contourType | contourTitle }}</ion-card-title
-                              >
-                              <ion-card-subtitle>
-                                {{ contourType | contourDescription }}
-                              </ion-card-subtitle>
-                            </ion-card-header>
-                            @for (faceMeshPoint of faceMesh.contours | contour:contourType; track faceMeshPoint) {
-                              <ion-card-content
-                                >
-                                <ion-item>
-                                  <ion-label position="fixed"
-                                    >#{{ faceMeshPoint.index }}</ion-label
-                                    >
-                                    <ion-input
-                                      type="text"
-                                      readonly
-                                      [value]="getPoint(faceMeshPoint.point)"
-                                    ></ion-input>
-                                  </ion-item>
-                                </ion-card-content>
-                              }
-                            </ion-card>
-                          </ion-item>
-                        }
-                      </ion-card-content>
-                    </ion-card>
-                  </ion-item>
-                }
-                @if (faceMesh.faceMeshPoints) {
-                  <ion-item>
-                    <ion-card id="face-mesh-points">
-                      <ion-card-header>
-                        <ion-card-title>Face Mesh Points</ion-card-title>
-                        <ion-card-subtitle>
-                          Represents a 3D point in face mesh
-                        </ion-card-subtitle>
-                      </ion-card-header>
-                      @for (faceMeshPoint of faceMesh.faceMeshPoints; track faceMeshPoint) {
-                        <ion-card-content
-                          >
-                          <ion-item>
-                            <ion-label position="fixed">#{{ faceMeshPoint.index }}</ion-label>
-                            <ion-input
-                              type="text"
-                              readonly
-                              [value]="getPoint(faceMeshPoint.point)"
-                            ></ion-input>
-                          </ion-item>
-                        </ion-card-content>
-                      }
-                    </ion-card>
-                  </ion-item>
-                }
-              </ion-list>
-            }
-          </ion-content>
+                  <ion-input
+                    type="text"
+                    readonly
+                    [value]="getPoint(faceMeshPoint.point)"
+                  ></ion-input>
+                </ion-item>
+              </ion-card-content>
+              }
+            </ion-card>
+          </ion-item>
+          }
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    } @if (faceMesh.faceMeshPoints) {
+    <ion-item>
+      <ion-card id="face-mesh-points">
+        <ion-card-header>
+          <ion-card-title>Face Mesh Points</ion-card-title>
+          <ion-card-subtitle>
+            Represents a 3D point in face mesh
+          </ion-card-subtitle>
+        </ion-card-header>
+        @for (faceMeshPoint of faceMesh.faceMeshPoints; track faceMeshPoint) {
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="fixed">#{{ faceMeshPoint.index }}</ion-label>
+            <ion-input
+              type="text"
+              readonly
+              [value]="getPoint(faceMeshPoint.point)"
+            ></ion-input>
+          </ion-item>
+        </ion-card-content>
+        }
+      </ion-card>
+    </ion-item>
+    }
+  </ion-list>
+  }
+</ion-content>

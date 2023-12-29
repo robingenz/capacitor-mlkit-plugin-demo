@@ -22,75 +22,72 @@
           (click)="openOnGithub()"
           class="ion-float-right"
           >GitHub</ion-button
-          >
-        </ion-col>
-      </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Translate</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <form [formGroup]="translateFormGroup">
-          <ion-item>
-            <ion-label position="fixed">Text</ion-label>
-            <ion-input type="text" formControlName="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="fixed">Source Language</ion-label>
-            <ion-select formControlName="sourceLanguage">
-              @for (item of language | keyvalue; track item) {
-                <ion-select-option
-                  [value]="item.value"
-                  >{{ item.key }}</ion-select-option
-                  >
-                }
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-label position="fixed">Target Language</ion-label>
-              <ion-select formControlName="targetLanguage">
-                @for (item of language | keyvalue; track item) {
-                  <ion-select-option
-                    [value]="item.value"
-                    >{{ item.key }}</ion-select-option
-                    >
-                  }
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label position="fixed">Translation</ion-label>
-                <ion-input
-                  type="text"
-                  readonly
-                  formControlName="translatedText"
-                ></ion-input>
-              </ion-item>
-            </form>
-            <ion-button (click)="translate()">Translate</ion-button>
-          </ion-card-content>
-        </ion-card>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Manage Models</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <form [formGroup]="manageModelsFormGroup">
-              <ion-item>
-                <ion-label position="fixed">Language</ion-label>
-                <ion-select formControlName="languages" [multiple]="true">
-                  @for (item of language | keyvalue; track item) {
-                    <ion-select-option
-                      [value]="item.value"
-                      >{{ item.key }}</ion-select-option
-                      >
-                    }
-                  </ion-select>
-                </ion-item>
-              </form>
-              <ion-button (click)="saveModels()" [disabled]="disableSaveModelsButton"
-                >Save</ion-button
-                >
-              </ion-card-content>
-            </ion-card>
-          </ion-content>
+        >
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Translate</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="translateFormGroup">
+        <ion-item>
+          <ion-label position="fixed">Text</ion-label>
+          <ion-input type="text" formControlName="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Source Language</ion-label>
+          <ion-select formControlName="sourceLanguage">
+            @for (item of language | keyvalue; track item) {
+            <ion-select-option [value]="item.value"
+              >{{ item.key }}</ion-select-option
+            >
+            }
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Target Language</ion-label>
+          <ion-select formControlName="targetLanguage">
+            @for (item of language | keyvalue; track item) {
+            <ion-select-option [value]="item.value"
+              >{{ item.key }}</ion-select-option
+            >
+            }
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Translation</ion-label>
+          <ion-input
+            type="text"
+            readonly
+            formControlName="translatedText"
+          ></ion-input>
+        </ion-item>
+      </form>
+      <ion-button (click)="translate()">Translate</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Manage Models</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="manageModelsFormGroup">
+        <ion-item>
+          <ion-label position="fixed">Language</ion-label>
+          <ion-select formControlName="languages" [multiple]="true">
+            @for (item of language | keyvalue; track item) {
+            <ion-select-option [value]="item.value"
+              >{{ item.key }}</ion-select-option
+            >
+            }
+          </ion-select>
+        </ion-item>
+      </form>
+      <ion-button (click)="saveModels()" [disabled]="disableSaveModelsButton"
+        >Save</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+</ion-content>

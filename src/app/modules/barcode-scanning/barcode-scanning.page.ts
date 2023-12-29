@@ -34,7 +34,7 @@ export class BarcodeScanningPage implements OnInit {
 
   constructor(
     private readonly dialogService: DialogService,
-    private readonly ngZone: NgZone
+    private readonly ngZone: NgZone,
   ) {}
 
   public ngOnInit(): void {
@@ -56,7 +56,7 @@ export class BarcodeScanningPage implements OnInit {
               googleBarcodeScannerModuleInstallProgress: progress,
             });
           });
-        }
+        },
       );
     });
   }

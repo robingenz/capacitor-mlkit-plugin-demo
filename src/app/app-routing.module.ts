@@ -16,35 +16,35 @@ const routes: Routes = [
     path: 'barcode-scanning',
     loadChildren: () =>
       import('./modules/barcode-scanning/barcode-scanning.module').then(
-        (m) => m.BarcodeScanningModule
+        (m) => m.BarcodeScanningModule,
       ),
   },
   {
     path: 'face-detection',
     loadChildren: () =>
       import('./modules/face-detection/face-detection.module').then(
-        (m) => m.FaceDetectionModule
+        (m) => m.FaceDetectionModule,
       ),
   },
   {
     path: 'face-mesh-detection',
     loadChildren: () =>
       import('./modules/face-mesh-detection/face-mesh-detection.module').then(
-        (m) => m.FaceMeshDetectionModule
+        (m) => m.FaceMeshDetectionModule,
       ),
   },
   {
     path: 'selfie-segmentation',
     loadChildren: () =>
       import('./modules/selfie-segmentation/selfie-segmentation.module').then(
-        (m) => m.SelfieSegmentationModule
+        (m) => m.SelfieSegmentationModule,
       ),
   },
   {
     path: 'translation',
     loadChildren: () =>
       import('./modules/translation/translation.module').then(
-        (m) => m.TranslationModule
+        (m) => m.TranslationModule,
       ),
   },
   {

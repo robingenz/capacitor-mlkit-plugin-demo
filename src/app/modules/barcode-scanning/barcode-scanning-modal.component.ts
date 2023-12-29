@@ -31,7 +31,7 @@ import { InputCustomEvent } from '@ionic/angular';
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    
+
     <ion-content>
       <div #square class="square"></div>
       <div class="zoom-ratio-wrapper">
@@ -43,18 +43,14 @@ import { InputCustomEvent } from '@ionic/angular';
         ></ion-range>
       </div>
       @if (isTorchAvailable) {
-        <ion-fab
-          slot="fixed"
-          horizontal="end"
-          vertical="bottom"
-          >
+        <ion-fab slot="fixed" horizontal="end" vertical="bottom">
           <ion-fab-button (click)="toggleTorch()">
             <ion-icon name="flashlight"></ion-icon>
           </ion-fab-button>
         </ion-fab>
       }
     </ion-content>
-    `,
+  `,
   styles: [
     `
       ion-content {
@@ -100,7 +96,7 @@ export class BarcodeScanningModalComponent
 
   constructor(
     private readonly dialogService: DialogService,
-    private readonly ngZone: NgZone
+    private readonly ngZone: NgZone,
   ) {}
 
   public ngOnInit(): void {
@@ -196,7 +192,7 @@ export class BarcodeScanningModalComponent
           listener.remove();
           this.closeModal(event.barcode);
         });
-      }
+      },
     );
     await BarcodeScanner.startScan(options);
     void BarcodeScanner.getMinZoomRatio().then((result) => {
