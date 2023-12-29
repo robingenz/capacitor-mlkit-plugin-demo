@@ -31,7 +31,7 @@ import { InputCustomEvent } from '@ionic/angular';
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-
+    
     <ion-content>
       <div #square class="square"></div>
       <div class="zoom-ratio-wrapper">
@@ -42,18 +42,19 @@ import { InputCustomEvent } from '@ionic/angular';
           (ionChange)="setZoomRatio($any($event))"
         ></ion-range>
       </div>
-      <ion-fab
-        *ngIf="isTorchAvailable"
-        slot="fixed"
-        horizontal="end"
-        vertical="bottom"
-      >
-        <ion-fab-button (click)="toggleTorch()">
-          <ion-icon name="flashlight"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
+      @if (isTorchAvailable) {
+        <ion-fab
+          slot="fixed"
+          horizontal="end"
+          vertical="bottom"
+          >
+          <ion-fab-button (click)="toggleTorch()">
+            <ion-icon name="flashlight"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      }
     </ion-content>
-  `,
+    `,
   styles: [
     `
       ion-content {
