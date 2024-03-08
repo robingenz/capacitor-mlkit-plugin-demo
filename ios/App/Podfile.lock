@@ -8,18 +8,18 @@ PODS:
     - Capacitor
   - CapacitorKeyboard (5.0.6):
     - Capacitor
-  - CapacitorMlkitBarcodeScanning (5.3.0-dev.966ebeb.1703101506):
+  - CapacitorMlkitBarcodeScanning (5.4.0):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 4.0.0)
-  - CapacitorMlkitFaceDetection (5.3.0):
+  - CapacitorMlkitFaceDetection (5.4.0):
     - Capacitor
     - GoogleMLKit/FaceDetection (= 4.0.0)
-  - CapacitorMlkitFaceMeshDetection (5.3.0):
+  - CapacitorMlkitFaceMeshDetection (5.4.0):
     - Capacitor
-  - CapacitorMlkitSelfieSegmentation (5.3.0):
+  - CapacitorMlkitSelfieSegmentation (5.4.0):
     - Capacitor
     - GoogleMLKit/SegmentationSelfie (= 4.0.0)
-  - CapacitorMlkitTranslation (5.3.0):
+  - CapacitorMlkitTranslation (5.4.0):
     - Capacitor
     - GoogleMLKit/Translate (= 4.0.0)
   - CapacitorStatusBar (5.0.6):
@@ -182,11 +182,11 @@ SPEC CHECKSUMS:
   CapacitorCordova: 1222fdd78bfd0d323cc22bf254eed1484fe6c92a
   CapacitorHaptics: 1fffc1217c7e64a472d7845be50fb0c2f7d4204c
   CapacitorKeyboard: b978154b024a5f65e044908e37d15b7de58b9d12
-  CapacitorMlkitBarcodeScanning: 29bbe169ad77d01eba30485b627f4cb6e0d5d72e
-  CapacitorMlkitFaceDetection: 46c58a49cb0068a93d6973e2a92b4a0392b02f5d
-  CapacitorMlkitFaceMeshDetection: 326e2a394e0364724e4a46e03eb047c013db01e1
-  CapacitorMlkitSelfieSegmentation: 4cfbea5634d80d5ed044cc76037bb822977e1ecd
-  CapacitorMlkitTranslation: bdaa7f3b842bbd78d939e5f62038b7418c60a2af
+  CapacitorMlkitBarcodeScanning: 8fb81cbef3c6ffe0c0e2dbd15ed6dca889a5a062
+  CapacitorMlkitFaceDetection: 9134f89656284a9bb0c607e9bace11d1d484ec26
+  CapacitorMlkitFaceMeshDetection: bd235939a4d26f44ca4829b50758ebbc59c633e0
+  CapacitorMlkitSelfieSegmentation: 0b2c2aba05fbe7c1dfa16739997b514056f868b7
+  CapacitorMlkitTranslation: 7f6227f10d90ae08bdaffa0874767c079e29dd45
   CapacitorStatusBar: 565c0a1ebd79bb40d797606a8992b4a105885309
   CapawesomeCapacitorFilePicker: 4a27a464c569de315738fcb7bdd3ad544ef3c7c2
   GoogleDataTransport: 57c22343ab29bc686febbf7cbb13bad167c2d8fe
@@ -211,4 +211,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0f6b86536afff6901bc8945781ab8954b820049c
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
