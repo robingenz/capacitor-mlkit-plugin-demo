@@ -108,7 +108,7 @@ export class BarcodeScanningModalComponent
   public ngAfterViewInit(): void {
     setTimeout(() => {
       this.startScan();
-    }, 250);
+    }, 500);
   }
 
   public ngOnDestroy(): void {
