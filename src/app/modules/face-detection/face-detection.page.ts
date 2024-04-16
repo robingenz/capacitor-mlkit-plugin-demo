@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import {
-  FaceDetection,
-  PerformanceMode,
-  LandmarkMode,
-  LandmarkType,
+  ClassificationMode,
   ContourMode,
   ContourType,
-  ClassificationMode,
   Face,
+  FaceDetection,
+  LandmarkMode,
+  LandmarkType,
+  PerformanceMode,
   Point,
 } from '@capacitor-mlkit/face-detection';
 import { FilePicker } from '@capawesome/capacitor-file-picker';
@@ -58,7 +58,7 @@ export class FaceDetectionPage implements OnInit {
   }
 
   public async processImage(): Promise<void> {
-    const { files } = await FilePicker.pickImages({ multiple: false });
+    const { files } = await FilePicker.pickImages({ limit: 1 });
     const path = files[0]?.path;
     if (!path) {
       return;

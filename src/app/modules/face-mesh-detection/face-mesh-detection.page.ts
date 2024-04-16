@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import {
   FaceMesh,
@@ -32,7 +32,7 @@ export class FaceMeshDetectionPage {
   }
 
   public async processImage(): Promise<void> {
-    const { files } = await FilePicker.pickImages({ multiple: false });
+    const { files } = await FilePicker.pickImages({ limit: 1 });
     const path = files[0]?.path;
     if (!path) {
       return;

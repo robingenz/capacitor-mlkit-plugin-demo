@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "dev.robingenz.capacitorjs.demo.mlkitplugins"
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "dev.robingenz.capacitorjs.demo.mlkitplugins"
         minSdkVersion rootProject.ext.minSdkVersion

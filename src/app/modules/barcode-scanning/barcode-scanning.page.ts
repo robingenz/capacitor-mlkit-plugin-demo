@@ -84,7 +84,7 @@ export class BarcodeScanningPage implements OnInit {
   }
 
   public async readBarcodeFromImage(): Promise<void> {
-    const { files } = await FilePicker.pickImages({ multiple: false });
+    const { files } = await FilePicker.pickImages({ limit: 1 });
     const path = files[0]?.path;
     if (!path) {
       return;

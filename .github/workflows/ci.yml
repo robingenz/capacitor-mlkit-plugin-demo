@@ -72,7 +72,7 @@ jobs:
           path: android/app/build/outputs/apk/debug
   ios:
     name: Build iOS platform
-    runs-on: macos-latest
+    runs-on: macos-14
     needs: [build]
     steps:
       - name: Checkout

@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import {
   ProcessImageResult,
   SelfieSegmentation,
 } from '@capacitor-mlkit/selfie-segmentation';
-import { FilePicker } from '@capawesome/capacitor-file-picker';
 import { Capacitor } from '@capacitor/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { FilePicker } from '@capawesome/capacitor-file-picker';
 
 @Component({
   selector: 'app-selfie-segmentation',
@@ -35,7 +35,7 @@ export class SelfieSegmentationPage {
   }
 
   public async processImage(): Promise<void> {
-    const { files } = await FilePicker.pickImages({ multiple: false });
+    const { files } = await FilePicker.pickImages({ limit: 1 });
     const path = files[0]?.path;
     if (!path) {
       return;
