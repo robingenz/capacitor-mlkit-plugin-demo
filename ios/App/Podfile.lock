@@ -167,18 +167,18 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capawesome/capacitor-file-picker"
 
 SPEC CHECKSUMS:
-  Capacitor: 559d073c4ca6c27f8e7002c807eea94c3ba435a9
-  CapacitorApp: 9d53aec7101f7b030a950c5bdc4df8612576b279
+  Capacitor: c527d208447590a004f0a4a2c42a5f361848fa8a
+  CapacitorApp: 30145f2ea2311e4f3744472119ec87d2ddf4c0a7
   CapacitorCordova: 8c4bfdf69368512e85b1d8b724dd7546abeb30af
-  CapacitorHaptics: 9ebc9363f0e9b8eb4295088a0b474530acf1859b
-  CapacitorKeyboard: deacbd09d8d1029c3681197fb05d206b721d5f73
-  CapacitorMlkitBarcodeScanning: ef06cb310dcb0cd77aa94b42d80f6101b6017e90
-  CapacitorMlkitFaceDetection: c59dc1bfe8b687cd933511f1929208a8c44a094d
-  CapacitorMlkitFaceMeshDetection: a584d929e36f616875dd5a376811234a1093b0ed
-  CapacitorMlkitSelfieSegmentation: 9c7e9c40cade5886e0859245e7b4555a8374123c
-  CapacitorMlkitTranslation: 15d6da87493ae32344725002460dbac3e2e91f77
-  CapacitorStatusBar: 2e4369f99166125435641b1908d05f561eaba6f6
-  CapawesomeCapacitorFilePicker: 983e8d272d200897cf1c12cf9a62439fa2fb2c35
+  CapacitorHaptics: 0cea833e6a8bf489dd6acaaebf6d953b90086c59
+  CapacitorKeyboard: dc97fe50dcfdcbe12af56c49bbed150077d08043
+  CapacitorMlkitBarcodeScanning: 9db39f42f3f2ef8ad073db097dfecd30431af45d
+  CapacitorMlkitFaceDetection: ba65ca7301d2bf5c9b7d906002e0bde9060c9988
+  CapacitorMlkitFaceMeshDetection: 977bfd9a6793b04de489b2ae1f5dec00190c47c2
+  CapacitorMlkitSelfieSegmentation: 602f368a1f15c36d8ae388589e3021e2ca34d331
+  CapacitorMlkitTranslation: a4138d0ce60389082cbf0dfac3436da680350f55
+  CapacitorStatusBar: 129c68650d3f950e080e8e7e03d69c3b361dbe52
+  CapawesomeCapacitorFilePicker: 9f81333cae7945e4f54c51489145d60fbef7d724
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleMLKit: eff9e23ec1d90ea4157a1ee2e32a4f610c5b3318
   GoogleToolboxForMac: d1a2cbf009c453f4d6ded37c105e2f67a32206d8
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
 
-PODFILE CHECKSUM: ae5a1fc11e35ab3fcd7c3e0ead9669395d2eee1f
+PODFILE CHECKSUM: d8cdc0dbb18aaba9ac07eec2a3890f676e1e3cb1
 
 COCOAPODS: 1.16.2
