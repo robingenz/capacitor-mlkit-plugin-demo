@@ -1,30 +1,32 @@
 PODS:
-  - Capacitor (6.0.0):
+  - Capacitor (7.0.0):
     - CapacitorCordova
-  - CapacitorApp (6.0.0):
+  - CapacitorApp (7.0.0):
     - Capacitor
-  - CapacitorCordova (6.0.0)
-  - CapacitorHaptics (6.0.0):
+  - CapacitorCordova (7.0.0)
+  - CapacitorHaptics (7.0.0):
     - Capacitor
-  - CapacitorKeyboard (6.0.0):
+  - CapacitorKeyboard (7.0.0):
     - Capacitor
-  - CapacitorMlkitBarcodeScanning (7.0.0-next.1):
+  - CapacitorMlkitBarcodeScanning (7.0.0-next.3):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 7.0.0)
-  - CapacitorMlkitFaceDetection (7.0.0-next.1):
+  - CapacitorMlkitFaceDetection (7.0.0-next.3):
     - Capacitor
     - GoogleMLKit/FaceDetection (= 7.0.0)
-  - CapacitorMlkitFaceMeshDetection (7.0.0-next.1):
+  - CapacitorMlkitFaceMeshDetection (7.0.0-next.3):
     - Capacitor
-  - CapacitorMlkitSelfieSegmentation (7.0.0-next.1):
+  - CapacitorMlkitSelfieSegmentation (7.0.0-next.3):
     - Capacitor
     - GoogleMLKit/SegmentationSelfie (= 7.0.0)
-  - CapacitorMlkitTranslation (7.0.0-next.1):
+  - CapacitorMlkitTranslation (7.0.0-next.3):
     - Capacitor
     - GoogleMLKit/Translate (= 7.0.0)
-  - CapacitorStatusBar (6.0.0):
+  - CapacitorStatusBar (7.0.0):
     - Capacitor
-  - CapawesomeCapacitorFilePicker (6.0.0):
+  - CapawesomeCapacitorFilePicker (6.2.0):
+    - Capacitor
+  - CapawesomeCapacitorTorch (6.2.1):
     - Capacitor
   - GoogleDataTransport (10.1.0):
     - nanopb (~> 3.30910.0)
@@ -118,6 +120,7 @@ DEPENDENCIES:
   - "CapacitorMlkitTranslation (from `../../node_modules/@capacitor-mlkit/translation`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - "CapawesomeCapacitorFilePicker (from `../../node_modules/@capawesome/capacitor-file-picker`)"
+  - "CapawesomeCapacitorTorch (from `../../node_modules/@capawesome/capacitor-torch`)"
 
 SPEC REPOS:
   trunk:
@@ -165,20 +168,23 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/status-bar"
   CapawesomeCapacitorFilePicker:
     :path: "../../node_modules/@capawesome/capacitor-file-picker"
+  CapawesomeCapacitorTorch:
+    :path: "../../node_modules/@capawesome/capacitor-torch"
 
 SPEC CHECKSUMS:
-  Capacitor: c527d208447590a004f0a4a2c42a5f361848fa8a
-  CapacitorApp: 30145f2ea2311e4f3744472119ec87d2ddf4c0a7
-  CapacitorCordova: 8c4bfdf69368512e85b1d8b724dd7546abeb30af
-  CapacitorHaptics: 0cea833e6a8bf489dd6acaaebf6d953b90086c59
-  CapacitorKeyboard: dc97fe50dcfdcbe12af56c49bbed150077d08043
-  CapacitorMlkitBarcodeScanning: 9db39f42f3f2ef8ad073db097dfecd30431af45d
-  CapacitorMlkitFaceDetection: ba65ca7301d2bf5c9b7d906002e0bde9060c9988
-  CapacitorMlkitFaceMeshDetection: 977bfd9a6793b04de489b2ae1f5dec00190c47c2
-  CapacitorMlkitSelfieSegmentation: 602f368a1f15c36d8ae388589e3021e2ca34d331
-  CapacitorMlkitTranslation: a4138d0ce60389082cbf0dfac3436da680350f55
-  CapacitorStatusBar: 129c68650d3f950e080e8e7e03d69c3b361dbe52
-  CapawesomeCapacitorFilePicker: 9f81333cae7945e4f54c51489145d60fbef7d724
+  Capacitor: 82d1f3b4480d66b5996814f74500dcbc0908558c
+  CapacitorApp: 9cb31064a6c6bb2b1438583733a7bf45557fc1da
+  CapacitorCordova: 345f93b7edd121db98e4ec20ac94d6d7bcaf7e48
+  CapacitorHaptics: 7be406a91e4eb87287f321c6c68e1709d6837b3a
+  CapacitorKeyboard: 4db71e694e7afb5d7c0be09b05495c19f7d6c914
+  CapacitorMlkitBarcodeScanning: 259fe35b423c371df0214485756ebe8fc1448e72
+  CapacitorMlkitFaceDetection: 324734ebf39055b54c56f282e1268616512cf994
+  CapacitorMlkitFaceMeshDetection: 27ddc81ffd5f0d8a2a265b00c6808f0d706c1a17
+  CapacitorMlkitSelfieSegmentation: 25d8d2f2c3eaf65976d618a122b966e6315c1d56
+  CapacitorMlkitTranslation: cc540d23a89c5ab9975a7d5cc0e4315259b7890b
+  CapacitorStatusBar: a8c4c83ed2e973bdafb979e80e4b00d027832cb7
+  CapawesomeCapacitorFilePicker: 433bf83bc2fd583e55859023f108ba39f3df7cb9
+  CapawesomeCapacitorTorch: 0bcc3bf30e31246ae6ddd17d72db7e91e08ca90c
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleMLKit: eff9e23ec1d90ea4157a1ee2e32a4f610c5b3318
   GoogleToolboxForMac: d1a2cbf009c453f4d6ded37c105e2f67a32206d8
@@ -198,6 +204,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
 
-PODFILE CHECKSUM: d8cdc0dbb18aaba9ac07eec2a3890f676e1e3cb1
+PODFILE CHECKSUM: e406ce82c822dfb2f243d683f4c46892d95e9007
 
 COCOAPODS: 1.16.2

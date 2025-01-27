@@ -16,6 +16,7 @@
 		"HapticsPlugin",
 		"KeyboardPlugin",
 		"StatusBarPlugin",
-		"FilePickerPlugin"
+		"FilePickerPlugin",
+		"TorchPlugin"
 	]
 }
