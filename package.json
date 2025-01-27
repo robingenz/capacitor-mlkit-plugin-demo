@@ -34,6 +34,7 @@
     "@capacitor/keyboard": "7.0.0",
     "@capacitor/status-bar": "7.0.0",
     "@capawesome/capacitor-file-picker": "https://pkg.pr.new/capawesome-team/capacitor-plugins/@capawesome/capacitor-file-picker@402",
+    "@capawesome/capacitor-torch": "https://pkg.pr.new/capawesome-team/capacitor-plugins/@capawesome/capacitor-torch@402",
     "@ionic/angular": "6.2.9",
     "rxjs": "7.5.7",
     "tslib": "2.4.0",
