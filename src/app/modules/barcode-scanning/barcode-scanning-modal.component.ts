@@ -16,6 +16,7 @@ import {
   LensFacing,
   StartScanOptions,
 } from '@capacitor-mlkit/barcode-scanning';
+import { Torch } from '@capawesome/capacitor-torch';
 import { InputCustomEvent } from '@ionic/angular';
 
 @Component({
@@ -100,7 +101,7 @@ export class BarcodeScanningModalComponent
   ) {}
 
   public ngOnInit(): void {
-    BarcodeScanner.isTorchAvailable().then((result) => {
+    Torch.isAvailable().then((result) => {
       this.isTorchAvailable = result.available;
     });
   }
@@ -131,7 +132,7 @@ export class BarcodeScanningModalComponent
   }
 
   public async toggleTorch(): Promise<void> {
-    await BarcodeScanner.toggleTorch();
+    await Torch.toggle();
   }
 
   private async startScan(): Promise<void> {
@@ -171,10 +172,14 @@ export class BarcodeScanningModalComponent
         ]
       : undefined;
     const listener = await BarcodeScanner.addListener(
-      'barcodeScanned',
+      'barcodesScanned',
       async (event) => {
         this.ngZone.run(() => {
-          const cornerPoints = event.barcode.cornerPoints;
+          const firstBarcode = event.barcodes[0];
+          if (!firstBarcode) {
+            return;
+          }
+          const cornerPoints = firstBarcode.cornerPoints;
           if (detectionCornerPoints && cornerPoints) {
             if (
               detectionCornerPoints[0][0] > cornerPoints[0][0] ||
@@ -190,7 +195,7 @@ export class BarcodeScanningModalComponent
             }
           }
           listener.remove();
-          this.closeModal(event.barcode);
+          this.closeModal(firstBarcode);
         });
       },
     );
