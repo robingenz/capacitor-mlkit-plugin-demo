@@ -21,7 +21,7 @@
     "@angular/platform-browser": "17.0.8",
     "@angular/platform-browser-dynamic": "17.0.8",
     "@angular/router": "17.0.8",
-    "@capacitor-mlkit/barcode-scanning": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/barcode-scanning@232",
+    "@capacitor-mlkit/barcode-scanning": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/barcode-scanning@238",
     "@capacitor-mlkit/face-detection": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/face-detection@232",
     "@capacitor-mlkit/face-mesh-detection": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/face-mesh-detection@232",
     "@capacitor-mlkit/selfie-segmentation": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/selfie-segmentation@232",

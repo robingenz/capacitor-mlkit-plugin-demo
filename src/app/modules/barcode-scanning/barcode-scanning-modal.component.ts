@@ -16,6 +16,7 @@ import {
   LensFacing,
   StartScanOptions,
 } from '@capacitor-mlkit/barcode-scanning';
+import { Capacitor } from '@capacitor/core';
 import { Torch } from '@capawesome/capacitor-torch';
 import { InputCustomEvent } from '@ionic/angular';
 
@@ -34,6 +35,7 @@ import { InputCustomEvent } from '@ionic/angular';
     </ion-header>
 
     <ion-content>
+      <video #video autoplay class="video"></video>
       <div #square class="square"></div>
       <div class="zoom-ratio-wrapper">
         <ion-range
@@ -70,6 +72,15 @@ import { InputCustomEvent } from '@ionic/angular';
         box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3);
       }
 
+      .video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
       .zoom-ratio-wrapper {
         position: absolute;
         left: 50%;
@@ -90,6 +101,9 @@ export class BarcodeScanningModalComponent
 
   @ViewChild('square')
   public squareElement: ElementRef<HTMLDivElement> | undefined;
+
+  @ViewChild('video')
+  public videoElement: ElementRef<HTMLVideoElement> | undefined;
 
   public isTorchAvailable = false;
   public minZoomRatio: number | undefined;
@@ -142,6 +156,10 @@ export class BarcodeScanningModalComponent
     const options: StartScanOptions = {
       formats: this.formats,
       lensFacing: this.lensFacing,
+      videoElement:
+        Capacitor.getPlatform() === 'web'
+          ? this.videoElement?.nativeElement
+          : undefined,
     };
 
     const squareElementBoundingClientRect =
@@ -180,7 +198,11 @@ export class BarcodeScanningModalComponent
             return;
           }
           const cornerPoints = firstBarcode.cornerPoints;
-          if (detectionCornerPoints && cornerPoints) {
+          if (
+            detectionCornerPoints &&
+            cornerPoints &&
+            Capacitor.getPlatform() !== 'web'
+          ) {
             if (
               detectionCornerPoints[0][0] > cornerPoints[0][0] ||
               detectionCornerPoints[0][1] > cornerPoints[0][1] ||
@@ -200,12 +222,14 @@ export class BarcodeScanningModalComponent
       },
     );
     await BarcodeScanner.startScan(options);
-    void BarcodeScanner.getMinZoomRatio().then((result) => {
-      this.minZoomRatio = result.zoomRatio;
-    });
-    void BarcodeScanner.getMaxZoomRatio().then((result) => {
-      this.maxZoomRatio = result.zoomRatio;
-    });
+    if (Capacitor.getPlatform() !== 'web') {
+      void BarcodeScanner.getMinZoomRatio().then((result) => {
+        this.minZoomRatio = result.zoomRatio;
+      });
+      void BarcodeScanner.getMaxZoomRatio().then((result) => {
+        this.maxZoomRatio = result.zoomRatio;
+      });
+    }
   }
 
   private async stopScan(): Promise<void> {

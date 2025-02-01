@@ -8,7 +8,7 @@ PODS:
     - Capacitor
   - CapacitorKeyboard (7.0.0):
     - Capacitor
-  - CapacitorMlkitBarcodeScanning (7.0.0-next.3):
+  - CapacitorMlkitBarcodeScanning (7.0.0):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 7.0.0)
   - CapacitorMlkitFaceDetection (7.0.0-next.3):
@@ -177,7 +177,7 @@ SPEC CHECKSUMS:
   CapacitorCordova: 345f93b7edd121db98e4ec20ac94d6d7bcaf7e48
   CapacitorHaptics: 7be406a91e4eb87287f321c6c68e1709d6837b3a
   CapacitorKeyboard: 4db71e694e7afb5d7c0be09b05495c19f7d6c914
-  CapacitorMlkitBarcodeScanning: 259fe35b423c371df0214485756ebe8fc1448e72
+  CapacitorMlkitBarcodeScanning: db64496b3e8f41be79e3ef81bfd1bb430adcb0ca
   CapacitorMlkitFaceDetection: 324734ebf39055b54c56f282e1268616512cf994
   CapacitorMlkitFaceMeshDetection: 27ddc81ffd5f0d8a2a265b00c6808f0d706c1a17
   CapacitorMlkitSelfieSegmentation: 25d8d2f2c3eaf65976d618a122b966e6315c1d56
@@ -204,6 +204,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
 
-PODFILE CHECKSUM: e406ce82c822dfb2f243d683f4c46892d95e9007
+PODFILE CHECKSUM: e89372bcab0afbcdb4a62357ff98fc74d3d41603
 
 COCOAPODS: 1.16.2
