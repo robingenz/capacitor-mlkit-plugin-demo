@@ -36,7 +36,7 @@ import { InputCustomEvent } from '@ionic/angular';
 
     <ion-content>
       @if (isWeb) {
-      <video #video autoplay class="video"></video>
+        <video #video autoplay class="video"></video>
       }
       <div #square class="square"></div>
       <div class="zoom-ratio-wrapper">
