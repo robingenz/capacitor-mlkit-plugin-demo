@@ -11,22 +11,22 @@ PODS:
   - CapacitorMlkitBarcodeScanning (7.0.0):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 7.0.0)
-  - CapacitorMlkitFaceDetection (7.0.0-next.3):
+  - CapacitorMlkitFaceDetection (7.0.0):
     - Capacitor
     - GoogleMLKit/FaceDetection (= 7.0.0)
-  - CapacitorMlkitFaceMeshDetection (7.0.0-next.3):
+  - CapacitorMlkitFaceMeshDetection (7.0.0):
     - Capacitor
-  - CapacitorMlkitSelfieSegmentation (7.0.0-next.3):
+  - CapacitorMlkitSelfieSegmentation (7.0.0):
     - Capacitor
     - GoogleMLKit/SegmentationSelfie (= 7.0.0)
-  - CapacitorMlkitTranslation (7.0.0-next.3):
+  - CapacitorMlkitTranslation (7.0.0):
     - Capacitor
     - GoogleMLKit/Translate (= 7.0.0)
   - CapacitorStatusBar (7.0.0):
     - Capacitor
-  - CapawesomeCapacitorFilePicker (6.2.0):
+  - CapawesomeCapacitorFilePicker (7.0.0):
     - Capacitor
-  - CapawesomeCapacitorTorch (6.2.1):
+  - CapawesomeCapacitorTorch (7.0.0):
     - Capacitor
   - GoogleDataTransport (10.1.0):
     - nanopb (~> 3.30910.0)
@@ -178,13 +178,13 @@ SPEC CHECKSUMS:
   CapacitorHaptics: 7be406a91e4eb87287f321c6c68e1709d6837b3a
   CapacitorKeyboard: 4db71e694e7afb5d7c0be09b05495c19f7d6c914
   CapacitorMlkitBarcodeScanning: db64496b3e8f41be79e3ef81bfd1bb430adcb0ca
-  CapacitorMlkitFaceDetection: 324734ebf39055b54c56f282e1268616512cf994
-  CapacitorMlkitFaceMeshDetection: 27ddc81ffd5f0d8a2a265b00c6808f0d706c1a17
-  CapacitorMlkitSelfieSegmentation: 25d8d2f2c3eaf65976d618a122b966e6315c1d56
-  CapacitorMlkitTranslation: cc540d23a89c5ab9975a7d5cc0e4315259b7890b
+  CapacitorMlkitFaceDetection: 90784a3133b3354e16645ce399061dbbeccad278
+  CapacitorMlkitFaceMeshDetection: f7c1de97861ec9dbf5e8ce31886b582b190ed0c3
+  CapacitorMlkitSelfieSegmentation: 8e82fcad51577e396b0a1a401d0c867fadd94c69
+  CapacitorMlkitTranslation: 827b69c6a016b8fc6a317b3eb5b3c5b84c48592b
   CapacitorStatusBar: a8c4c83ed2e973bdafb979e80e4b00d027832cb7
-  CapawesomeCapacitorFilePicker: 433bf83bc2fd583e55859023f108ba39f3df7cb9
-  CapawesomeCapacitorTorch: 0bcc3bf30e31246ae6ddd17d72db7e91e08ca90c
+  CapawesomeCapacitorFilePicker: 14e5eef9b494c0ced87143d5c03ef690a79c9851
+  CapawesomeCapacitorTorch: 9c98ee771501ec9e72923972484fa15fee1fab27
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleMLKit: eff9e23ec1d90ea4157a1ee2e32a4f610c5b3318
   GoogleToolboxForMac: d1a2cbf009c453f4d6ded37c105e2f67a32206d8
