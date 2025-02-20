@@ -35,7 +35,9 @@ import { InputCustomEvent } from '@ionic/angular';
     </ion-header>
 
     <ion-content>
+      @if (isWeb) {
       <video #video autoplay class="video"></video>
+      }
       <div #square class="square"></div>
       <div class="zoom-ratio-wrapper">
         <ion-range
@@ -106,6 +108,7 @@ export class BarcodeScanningModalComponent
   public videoElement: ElementRef<HTMLVideoElement> | undefined;
 
   public isTorchAvailable = false;
+  public isWeb = Capacitor.getPlatform() === 'web';
   public minZoomRatio: number | undefined;
   public maxZoomRatio: number | undefined;
 
