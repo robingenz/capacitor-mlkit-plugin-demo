@@ -25,6 +25,7 @@
     "@capacitor-mlkit/face-detection": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/face-detection@232",
     "@capacitor-mlkit/face-mesh-detection": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/face-mesh-detection@232",
     "@capacitor-mlkit/selfie-segmentation": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/selfie-segmentation@232",
+    "@capacitor-mlkit/subject-segmentation": "file:../capacitor-mlkit/packages/subject-segmentation",
     "@capacitor-mlkit/translation": "https://pkg.pr.new/capawesome-team/capacitor-mlkit/@capacitor-mlkit/translation@232",
     "@capacitor/android": "7.0.0",
     "@capacitor/app": "7.0.0",
