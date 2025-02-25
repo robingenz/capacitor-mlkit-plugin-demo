@@ -24,6 +24,10 @@ export class HomePage {
       url: '/selfie-segmentation',
     },
     {
+      name: 'Subject Segmentation',
+      url: '/subject-segmentation',
+    },
+    {
       name: 'Translation',
       url: '/translation',
     },

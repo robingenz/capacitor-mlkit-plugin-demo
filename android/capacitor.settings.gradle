@@ -14,6 +14,9 @@ project(':capacitor-mlkit-face-mesh-detection').projectDir = new File('../node_m
 include ':capacitor-mlkit-selfie-segmentation'
 project(':capacitor-mlkit-selfie-segmentation').projectDir = new File('../node_modules/@capacitor-mlkit/selfie-segmentation/android')
 
+include ':capacitor-mlkit-subject-segmentation'
+project(':capacitor-mlkit-subject-segmentation').projectDir = new File('../../capacitor-mlkit/packages/subject-segmentation/android')
+
 include ':capacitor-mlkit-translation'
 project(':capacitor-mlkit-translation').projectDir = new File('../node_modules/@capacitor-mlkit/translation/android')
 

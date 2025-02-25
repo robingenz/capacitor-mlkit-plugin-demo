@@ -25,6 +25,7 @@
     "@capacitor-mlkit/face-detection": "7.0.0",
     "@capacitor-mlkit/face-mesh-detection": "7.0.0",
     "@capacitor-mlkit/selfie-segmentation": "7.0.0",
+    "@capacitor-mlkit/subject-segmentation": "file:../capacitor-mlkit/packages/subject-segmentation",
     "@capacitor-mlkit/translation": "7.0.0",
     "@capacitor/android": "7.0.0",
     "@capacitor/app": "7.0.0",

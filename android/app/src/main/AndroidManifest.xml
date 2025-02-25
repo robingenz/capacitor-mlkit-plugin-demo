@@ -35,8 +35,10 @@
         </provider>
 
         <!-- Disable screenview tracking -->
-        <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="false" />
-        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES" android:value="barcode_ui"/>
+        <meta-data android:name="google_analytics_automatic_screen_reporting_enabled"
+            android:value="false" />
+        <meta-data android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="barcode_ui,subject_segment" />
     </application>
 
     <uses-feature android:name="android.hardware.camera" android:required="false" />
@@ -47,5 +49,5 @@
     <!-- To get access to the camera. -->
     <uses-permission android:name="android.permission.CAMERA" />
     <!-- To get access to the flashlight. -->
-    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
 </manifest>

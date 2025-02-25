@@ -1,0 +1,25 @@
+img {
+  --backgroundColor: rgb(255, 255, 255);
+  --squareColor: rgba(100, 100, 100, 0.5);
+  --squareSize: 0.5em;
+
+  @media (prefers-color-scheme: dark) {
+    --backgroundColor: rgb(0, 0, 0);
+  }
+
+  background-color: var(--backgroundColor);
+  background-image: linear-gradient(
+      45deg,
+      var(--squareColor) 25%,
+      transparent 25%
+    ),
+    linear-gradient(135deg, var(--squareColor) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--squareColor) 75%),
+    linear-gradient(135deg, transparent 75%, var(--squareColor) 75%);
+  background-position:
+    0 0,
+    var(--squareSize) 0,
+    var(--squareSize) calc(-1 * var(--squareSize)),
+    0 calc(-1 * var(--squareSize));
+  background-size: calc(2 * var(--squareSize)) calc(2 * var(--squareSize));
+}

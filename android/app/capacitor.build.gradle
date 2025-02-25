@@ -13,6 +13,7 @@ dependencies {
     implementation project(':capacitor-mlkit-face-detection')
     implementation project(':capacitor-mlkit-face-mesh-detection')
     implementation project(':capacitor-mlkit-selfie-segmentation')
+    implementation project(':capacitor-mlkit-subject-segmentation')
     implementation project(':capacitor-mlkit-translation')
     implementation project(':capacitor-app')
     implementation project(':capacitor-haptics')

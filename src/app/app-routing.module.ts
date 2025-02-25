@@ -41,6 +41,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'subject-segmentation',
+    loadChildren: () =>
+      import('./modules/subject-segmentation/subject-segmentation.module').then(
+        (m) => m.SubjectSegmentationModule,
+      ),
+  },
+  {
     path: 'translation',
     loadChildren: () =>
       import('./modules/translation/translation.module').then(
