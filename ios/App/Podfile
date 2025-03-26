@@ -22,7 +22,6 @@ def capacitor_pods
   pod 'CapacitorKeyboard', :path => '../../node_modules/@capacitor/keyboard'
   pod 'CapacitorStatusBar', :path => '../../node_modules/@capacitor/status-bar'
   pod 'CapawesomeCapacitorFilePicker', :path => '../../node_modules/@capawesome/capacitor-file-picker'
-  pod 'CapawesomeCapacitorTorch', :path => '../../node_modules/@capawesome/capacitor-torch'
 end
 
 target 'App' do

@@ -5,7 +5,6 @@ import {
   Input,
   NgZone,
   OnDestroy,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { DialogService } from '@app/core';
@@ -17,7 +16,6 @@ import {
   StartScanOptions,
 } from '@capacitor-mlkit/barcode-scanning';
 import { Capacitor } from '@capacitor/core';
-import { Torch } from '@capawesome/capacitor-torch';
 import { InputCustomEvent } from '@ionic/angular';
 
 @Component({
@@ -93,9 +91,7 @@ import { InputCustomEvent } from '@ionic/angular';
     `,
   ],
 })
-export class BarcodeScanningModalComponent
-  implements OnInit, AfterViewInit, OnDestroy
-{
+export class BarcodeScanningModalComponent implements AfterViewInit, OnDestroy {
   @Input()
   public formats: BarcodeFormat[] = [];
   @Input()
@@ -117,15 +113,13 @@ export class BarcodeScanningModalComponent
     private readonly ngZone: NgZone,
   ) {}
 
-  public ngOnInit(): void {
-    Torch.isAvailable().then((result) => {
-      this.isTorchAvailable = result.available;
-    });
-  }
-
   public ngAfterViewInit(): void {
     setTimeout(() => {
-      this.startScan();
+      this.startScan().then(() =>
+        BarcodeScanner.isTorchAvailable().then((result) => {
+          this.isTorchAvailable = result.available;
+        }),
+      );
     }, 500);
   }
 
@@ -149,7 +143,7 @@ export class BarcodeScanningModalComponent
   }
 
   public async toggleTorch(): Promise<void> {
-    await Torch.toggle();
+    await BarcodeScanner.toggleTorch();
   }
 
   private async startScan(): Promise<void> {
