@@ -54,6 +54,10 @@ export class SubjectSegmentationPage {
     this.result = result;
   }
 
+  public async installGoogleSubjectSegmentationModule(): Promise<void> {
+    await SubjectSegmentation.installGoogleSubjectSegmentationModule();
+  }
+
   public convertPathToWebPath(path: string): SafeUrl {
     const fileSrc = Capacitor.convertFileSrc(path);
     return this.domSanitizer.bypassSecurityTrustUrl(fileSrc);

@@ -11,6 +11,7 @@
 		"FaceDetectionPlugin",
 		"FaceMeshDetectionPlugin",
 		"SelfieSegmentationPlugin",
+		"SubjectSegmentationPlugin",
 		"TranslationPlugin",
 		"AppPlugin",
 		"HapticsPlugin",
