@@ -11,12 +11,12 @@
 		"FaceDetectionPlugin",
 		"FaceMeshDetectionPlugin",
 		"SelfieSegmentationPlugin",
+		"SubjectSegmentationPlugin",
 		"TranslationPlugin",
 		"AppPlugin",
 		"HapticsPlugin",
 		"KeyboardPlugin",
 		"StatusBarPlugin",
-		"FilePickerPlugin",
-		"TorchPlugin"
+		"FilePickerPlugin"
 	]
 }

@@ -19,6 +19,8 @@ PODS:
   - CapacitorMlkitSelfieSegmentation (7.1.0):
     - Capacitor
     - GoogleMLKit/SegmentationSelfie (= 7.0.0)
+  - CapacitorMlkitSubjectSegmentation (7.1.0):
+    - Capacitor
   - CapacitorMlkitTranslation (7.1.0):
     - Capacitor
     - GoogleMLKit/Translate (= 7.0.0)
@@ -115,6 +117,7 @@ DEPENDENCIES:
   - "CapacitorMlkitFaceDetection (from `../../node_modules/@capacitor-mlkit/face-detection`)"
   - "CapacitorMlkitFaceMeshDetection (from `../../node_modules/@capacitor-mlkit/face-mesh-detection`)"
   - "CapacitorMlkitSelfieSegmentation (from `../../node_modules/@capacitor-mlkit/selfie-segmentation`)"
+  - "CapacitorMlkitSubjectSegmentation (from `../../node_modules/@capacitor-mlkit/subject-segmentation`)"
   - "CapacitorMlkitTranslation (from `../../node_modules/@capacitor-mlkit/translation`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - "CapawesomeCapacitorFilePicker (from `../../node_modules/@capawesome/capacitor-file-picker`)"
@@ -159,6 +162,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor-mlkit/face-mesh-detection"
   CapacitorMlkitSelfieSegmentation:
     :path: "../../node_modules/@capacitor-mlkit/selfie-segmentation"
+  CapacitorMlkitSubjectSegmentation:
+    :path: "../../node_modules/@capacitor-mlkit/subject-segmentation"
   CapacitorMlkitTranslation:
     :path: "../../node_modules/@capacitor-mlkit/translation"
   CapacitorStatusBar:
@@ -176,6 +181,7 @@ SPEC CHECKSUMS:
   CapacitorMlkitFaceDetection: 482d998482d9cceba2c1e63b5f8ca96853a376e1
   CapacitorMlkitFaceMeshDetection: 94ef867ca4558640f96603b080810a4fe5be6389
   CapacitorMlkitSelfieSegmentation: 3b1431d17476e493adff6d87a5b685de09fa8945
+  CapacitorMlkitSubjectSegmentation: c50383699fe74ad6cbf944a79378d5f6d3f91feb
   CapacitorMlkitTranslation: 2a9fac04f9a1625d8eb127145693fb71152a373d
   CapacitorStatusBar: a8c4c83ed2e973bdafb979e80e4b00d027832cb7
   CapawesomeCapacitorFilePicker: 14e5eef9b494c0ced87143d5c03ef690a79c9851
@@ -198,6 +204,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
 
-PODFILE CHECKSUM: ae5a1fc11e35ab3fcd7c3e0ead9669395d2eee1f
+PODFILE CHECKSUM: 7d6b6c48609d494a0ea27c4130f632b1fa539394
 
 COCOAPODS: 1.16.2

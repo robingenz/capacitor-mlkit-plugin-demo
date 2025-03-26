@@ -15,6 +15,7 @@ def capacitor_pods
   pod 'CapacitorMlkitFaceDetection', :path => '../../node_modules/@capacitor-mlkit/face-detection'
   pod 'CapacitorMlkitFaceMeshDetection', :path => '../../node_modules/@capacitor-mlkit/face-mesh-detection'
   pod 'CapacitorMlkitSelfieSegmentation', :path => '../../node_modules/@capacitor-mlkit/selfie-segmentation'
+  pod 'CapacitorMlkitSubjectSegmentation', :path => '../../node_modules/@capacitor-mlkit/subject-segmentation'
   pod 'CapacitorMlkitTranslation', :path => '../../node_modules/@capacitor-mlkit/translation'
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
   pod 'CapacitorHaptics', :path => '../../node_modules/@capacitor/haptics'

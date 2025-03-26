@@ -16,6 +16,10 @@
 		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.selfiesegmentation.SelfieSegmentationPlugin"
 	},
 	{
+		"pkg": "@capacitor-mlkit/subject-segmentation",
+		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.subjectsegmentation.SubjectSegmentationPlugin"
+	},
+	{
 		"pkg": "@capacitor-mlkit/translation",
 		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.translation.TranslationPlugin"
 	},
