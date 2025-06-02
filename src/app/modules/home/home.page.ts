@@ -31,6 +31,10 @@ export class HomePage {
       name: 'Translation',
       url: '/translation',
     },
+    {
+      name: 'Document Scanner',
+      url: '/document-scanner',
+    },
   ];
 
   constructor() {}

@@ -55,6 +55,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'document-scanner',
+    loadChildren: () =>
+      import('./modules/document-scanner/document-scanner.module').then(
+        (m) => m.DocumentScannerModule,
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
