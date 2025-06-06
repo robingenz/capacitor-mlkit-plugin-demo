@@ -4,6 +4,10 @@
 		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.barcodescanning.BarcodeScannerPlugin"
 	},
 	{
+		"pkg": "@capacitor-mlkit/document-scanner",
+		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.documentscanner.DocumentScannerPlugin"
+	},
+	{
 		"pkg": "@capacitor-mlkit/face-detection",
 		"classpath": "io.capawesome.capacitorjs.plugins.mlkit.facedetection.FaceDetectionPlugin"
 	},

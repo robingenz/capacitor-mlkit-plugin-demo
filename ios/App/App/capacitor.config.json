@@ -8,6 +8,7 @@
 	"cordova": {},
 	"packageClassList": [
 		"BarcodeScannerPlugin",
+		"DocumentScannerPlugin",
 		"FaceDetectionPlugin",
 		"FaceMeshDetectionPlugin",
 		"SelfieSegmentationPlugin",

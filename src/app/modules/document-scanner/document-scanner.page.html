@@ -1,0 +1,173 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Document Scanner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>About</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ⚡️ Capacitor plugin for scanning documents using ML Kit Document Scanner.
+    </ion-card-content>
+    <ion-row class="ion-no-padding">
+      <ion-col>
+        <ion-button
+          fill="clear"
+          (click)="openOnGithub()"
+          class="ion-float-right"
+          >GitHub</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Demo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formGroup">
+        <ion-item>
+          <ion-label position="fixed">Gallery Import Allowed</ion-label>
+          <ion-checkbox
+            formControlName="galleryImportAllowed"
+            slot="end"
+          ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Page Limit</ion-label>
+          <ion-input
+            type="number"
+            formControlName="pageLimit"
+            min="1"
+            max="50"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Result Formats</ion-label>
+          <ion-select formControlName="resultFormats">
+            <ion-select-option [value]="resultFormats.JPEG"
+              >JPEG</ion-select-option
+            >
+            <ion-select-option [value]="resultFormats.PDF"
+              >PDF</ion-select-option
+            >
+            <ion-select-option [value]="resultFormats.JPEG_PDF"
+              >JPEG + PDF</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Scanner Mode</ion-label>
+          <ion-select formControlName="scannerMode">
+            <ion-select-option [value]="scannerMode.BASE"
+              >BASE</ion-select-option
+            >
+            <ion-select-option [value]="scannerMode.BASE_WITH_FILTER"
+              >BASE_WITH_FILTER</ion-select-option
+            >
+            <ion-select-option [value]="scannerMode.FULL"
+              >FULL</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Module Available</ion-label>
+          <ion-input
+            type="text"
+            readonly
+            [value]="isModuleAvailable ? 'Yes' : 'No'"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Install State</ion-label>
+          <ion-input
+            formControlName="googleDocumentScannerModuleInstallState"
+            type="number"
+            readonly
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Install Progress</ion-label>
+          <ion-input
+            formControlName="googleDocumentScannerModuleInstallProgress"
+            type="number"
+            readonly
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="scanDocument()">
+          Scan Document
+        </ion-button>
+        <ion-button expand="block" (click)="checkModuleAvailability()">
+          Check Module Availability
+        </ion-button>
+        <ion-button
+          expand="block"
+          (click)="installGoogleDocumentScannerModule()"
+          [disabled]="isModuleAvailable"
+        >
+          Install Google Document Scanner Module
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  @if (scanResult) {
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Scan Result</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      @if (scanResult.scannedImages && scanResult.scannedImages.length > 0) {
+      <ion-item>
+        <ion-label position="fixed">Scanned Images</ion-label>
+        <ion-input
+          type="text"
+          readonly
+          [value]="scanResult.scannedImages.length + ' image(s)'"
+        ></ion-input>
+      </ion-item>
+      @for (image of scanResult.scannedImages; track image; let i = $index) {
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img
+            [src]="convertPathToWebPath(image)"
+            class="scan-result-image"
+            alt="Scanned document {{ i + 1 }}"
+          />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>Image {{ i + 1 }}</h3>
+          <p class="uri-display">{{ image }}</p>
+        </ion-label>
+      </ion-item>
+      } } @if (scanResult.pdf) {
+      <ion-item>
+        <ion-label position="fixed">PDF URI</ion-label>
+        <ion-input
+          type="text"
+          readonly
+          [value]="scanResult.pdf.uri"
+          class="uri-display"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">PDF Page Count</ion-label>
+        <ion-input
+          type="number"
+          readonly
+          [value]="scanResult.pdf.pageCount"
+        ></ion-input>
+      </ion-item>
+      }
+    </ion-card-content>
+  </ion-card>
+  }
+</ion-content>

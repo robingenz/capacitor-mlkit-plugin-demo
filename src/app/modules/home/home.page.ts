@@ -12,6 +12,10 @@ export class HomePage {
       url: '/barcode-scanning',
     },
     {
+      name: 'Document Scanner',
+      url: '/document-scanner',
+    },
+    {
       name: 'Face Detection',
       url: '/face-detection',
     },
