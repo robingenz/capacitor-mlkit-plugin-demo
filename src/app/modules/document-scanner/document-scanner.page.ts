@@ -45,7 +45,10 @@ export class DocumentScannerPage implements OnInit {
   private readonly GH_URL =
     'https://github.com/capawesome-team/capacitor-mlkit';
 
-  constructor(private readonly domSanitizer: DomSanitizer, private readonly ngZone: NgZone) {}
+  constructor(
+    private readonly domSanitizer: DomSanitizer,
+    private readonly ngZone: NgZone,
+  ) {}
 
   public ngOnInit(): void {
     this.checkModuleAvailability();
@@ -93,8 +96,8 @@ export class DocumentScannerPage implements OnInit {
   }
 
   public convertPathToWebPath(path: string): SafeUrl {
-      const fileSrc = Capacitor.convertFileSrc(path);
-      return this.domSanitizer.bypassSecurityTrustUrl(fileSrc);
+    const fileSrc = Capacitor.convertFileSrc(path);
+    return this.domSanitizer.bypassSecurityTrustUrl(fileSrc);
   }
 
   private setupEventListener(): void {
