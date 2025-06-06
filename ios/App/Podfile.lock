@@ -11,6 +11,8 @@ PODS:
   - CapacitorMlkitBarcodeScanning (7.1.0):
     - Capacitor
     - GoogleMLKit/BarcodeScanning (= 7.0.0)
+  - CapacitorMlkitDocumentScanner (7.2.1):
+    - Capacitor
   - CapacitorMlkitFaceDetection (7.1.0):
     - Capacitor
     - GoogleMLKit/FaceDetection (= 7.0.0)
@@ -114,6 +116,7 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorMlkitBarcodeScanning (from `../../node_modules/@capacitor-mlkit/barcode-scanning`)"
+  - "CapacitorMlkitDocumentScanner (from `../../node_modules/@capacitor-mlkit/document-scanner`)"
   - "CapacitorMlkitFaceDetection (from `../../node_modules/@capacitor-mlkit/face-detection`)"
   - "CapacitorMlkitFaceMeshDetection (from `../../node_modules/@capacitor-mlkit/face-mesh-detection`)"
   - "CapacitorMlkitSelfieSegmentation (from `../../node_modules/@capacitor-mlkit/selfie-segmentation`)"
@@ -156,6 +159,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/keyboard"
   CapacitorMlkitBarcodeScanning:
     :path: "../../node_modules/@capacitor-mlkit/barcode-scanning"
+  CapacitorMlkitDocumentScanner:
+    :path: "../../node_modules/@capacitor-mlkit/document-scanner"
   CapacitorMlkitFaceDetection:
     :path: "../../node_modules/@capacitor-mlkit/face-detection"
   CapacitorMlkitFaceMeshDetection:
@@ -178,6 +183,7 @@ SPEC CHECKSUMS:
   CapacitorHaptics: 7be406a91e4eb87287f321c6c68e1709d6837b3a
   CapacitorKeyboard: 4db71e694e7afb5d7c0be09b05495c19f7d6c914
   CapacitorMlkitBarcodeScanning: 8ed3b0c5b015c0f65ecdaf8d99aaa08b4e647693
+  CapacitorMlkitDocumentScanner: 38146db0c2bc24aaa1799be7ce66cd6dd849ec6a
   CapacitorMlkitFaceDetection: 482d998482d9cceba2c1e63b5f8ca96853a376e1
   CapacitorMlkitFaceMeshDetection: 94ef867ca4558640f96603b080810a4fe5be6389
   CapacitorMlkitSelfieSegmentation: 3b1431d17476e493adff6d87a5b685de09fa8945
@@ -204,6 +210,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
 
-PODFILE CHECKSUM: 7d6b6c48609d494a0ea27c4130f632b1fa539394
+PODFILE CHECKSUM: 30a4d6274d2d8e1ccc726f53562530c495098d54
 
 COCOAPODS: 1.16.2
