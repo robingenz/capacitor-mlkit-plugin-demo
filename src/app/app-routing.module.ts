@@ -20,6 +20,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'document-scanner',
+    loadChildren: () =>
+      import('./modules/document-scanner/document-scanner.module').then(
+        (m) => m.DocumentScannerModule,
+      ),
+  },
+  {
     path: 'face-detection',
     loadChildren: () =>
       import('./modules/face-detection/face-detection.module').then(
@@ -52,13 +59,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/translation/translation.module').then(
         (m) => m.TranslationModule,
-      ),
-  },
-  {
-    path: 'document-scanner',
-    loadChildren: () =>
-      import('./modules/document-scanner/document-scanner.module').then(
-        (m) => m.DocumentScannerModule,
       ),
   },
   {

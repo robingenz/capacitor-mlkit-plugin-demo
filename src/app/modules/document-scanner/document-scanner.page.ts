@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import {
   DocumentScanner,
   ScanOptions,
@@ -7,6 +8,7 @@ import {
   GoogleDocumentScannerModuleInstallState,
   GoogleDocumentScannerModuleInstallProgressEvent,
 } from '@capacitor-mlkit/document-scanner';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-document-scanner',
@@ -43,7 +45,7 @@ export class DocumentScannerPage implements OnInit {
   private readonly GH_URL =
     'https://github.com/capawesome-team/capacitor-mlkit';
 
-  constructor(private readonly ngZone: NgZone) {}
+  constructor(private readonly domSanitizer: DomSanitizer, private readonly ngZone: NgZone) {}
 
   public ngOnInit(): void {
     this.checkModuleAvailability();
@@ -90,11 +92,9 @@ export class DocumentScannerPage implements OnInit {
     window.open(this.GH_URL, '_blank');
   }
 
-  public convertPathToWebPath(path: string): string {
-    if (path.startsWith('file://')) {
-      return path;
-    }
-    return `file://${path}`;
+  public convertPathToWebPath(path: string): SafeUrl {
+      const fileSrc = Capacitor.convertFileSrc(path);
+      return this.domSanitizer.bypassSecurityTrustUrl(fileSrc);
   }
 
   private setupEventListener(): void {
