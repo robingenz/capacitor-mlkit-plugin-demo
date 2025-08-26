@@ -115,11 +115,14 @@ export class BarcodeScanningModalComponent implements AfterViewInit, OnDestroy {
 
   public ngAfterViewInit(): void {
     setTimeout(() => {
-      this.startScan().then(() =>
+      this.startScan().then(() => {
+        if (this.isWeb) {
+          return;
+        }
         BarcodeScanner.isTorchAvailable().then((result) => {
           this.isTorchAvailable = result.available;
-        }),
-      );
+        });
+      });
     }, 500);
   }
 
